@@ -51,9 +51,6 @@
 				</button>
             </form>
         </div>
-        <div>
-            <a href="#" target="_blank" class="fab fa-facebook"></a>
-        </div>
         <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
