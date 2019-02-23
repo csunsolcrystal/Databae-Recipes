@@ -45,9 +45,6 @@
 				</button>
             </form>
         </div>
-        <div>
-            <a href="#" target="_blank" class="fab fa-facebook"></a>
-        </div>
         <!-- Sign in Button -->
         <a href="/login" class="btn btn-dark navbar-btn login-btn">Sign In</a>
         <a href="/signup" class="btn btn-danger navbar-btn login-btn">Register</a>
