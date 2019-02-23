@@ -51,14 +51,10 @@
 				<!-- Authentication Links -->
 				@guest
 				<div class="btn-group">
-				<li class="nav-item">
-					<a class="btn btn-dark navbar-btn login-btn" href="{{ route('login') }}">{{ __('Login') }}</a>
-				</li>
-				<li class="nav-item">
-					@if (Route::has('register'))
-					<a class="btn btn-danger navbar-btn login-btn" href="{{ route('register') }}">{{ __('Register') }}</a>
-					@endif
-				</li>
+						<a class="btn btn-dark navbar-btn login-btn" href="{{ route('login') }}">{{ __('Login') }}</a>
+						@if (Route::has('register'))
+						<a class="btn btn-danger navbar-btn login-btn" href="{{ route('register') }}">{{ __('Register') }}</a>
+						@endif
 				</div>
 				@else
 				<li class="nav-item dropdown">
