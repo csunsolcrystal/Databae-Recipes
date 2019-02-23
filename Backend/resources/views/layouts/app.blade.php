@@ -29,7 +29,6 @@
 <body background="img/foodbg.jpg">
 	<div id="app">
 		<!-- Navbar -->
-	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<a class="navbar-brand" href="#">DataBae Recipes</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,8 +52,7 @@
 					</div>
 				</form>
 			</div>
-			<a href="uploadrecipes.html" class="btn btn-secondary navbar-btn login-btn" style="margin-right: 50px">Upload a Recipe</a>
-			<!-- Sign in Button -->
+			<!-- Right Side Of Navbar -->
 			<ul class="navbar-nav ml-auto">
 				<!-- Authentication Links -->
 				@guest
@@ -86,7 +84,9 @@
 				@endguest
 			</ul>
 		</nav>
-	</div>
+		<main class="py-4">
+			@yield('content')
+		</main>
 	</div>
 </body>
 
