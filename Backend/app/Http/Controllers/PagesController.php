@@ -17,5 +17,8 @@ public function signup() {
 public function login() {
 	return view('login');
 	}
+public function uploadrecipes() {
+	return view('uploadrecipes');
+	}
 
 }

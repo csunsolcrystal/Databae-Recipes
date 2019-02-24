@@ -23,7 +23,7 @@
 	<!-- Navbar -->
 	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">DataBae Recipes</a>
+			<a class="navbar-brand" href="/">DataBae Recipes</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -45,7 +45,6 @@
 					</div>
 				</form>
 			</div>
-			<a href="uploadrecipes.html" class="btn btn-secondary navbar-btn login-btn" style="margin-right: 50px">Upload a Recipe</a>
 			<!-- Sign in Button -->
 			<ul class="navbar-nav ml-auto">
 				<!-- Authentication Links -->
@@ -57,6 +56,7 @@
 						@endif
 				</div>
 				@else
+				<a href="/uploadrecipes" class="btn btn-secondary navbar-btn login-btn" style="margin-right: 50px">Upload a Recipe</a>
 				<li class="nav-item dropdown">
 					<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 						{{ Auth::user()->username }} <span class="caret"></span>

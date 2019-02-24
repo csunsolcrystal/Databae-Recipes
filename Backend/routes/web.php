@@ -12,8 +12,7 @@
 */
 
 Route::get('/', 'PagesController@home');
-//Route::get('/signup', 'PagesController@signup');
-//Route::get('/login', 'PagesController@login');
+Route::get('uploadrecipes', 'UploadRecipesController@uploadrecipes');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
