@@ -23,6 +23,12 @@ class UploadRecipesController extends Controller
 	return view('uploadrecipes');
      }
 
+
+    public function getuser() {
+	return Auth::User()->username;
+     }
+
+
     /**
      * Where to redirect users after uploading.
      *
@@ -65,7 +71,7 @@ class UploadRecipesController extends Controller
     protected function create(array $data)
     {
         return UploadRecipe::create([
-            'username' => Auth::User()->username;
+            'username' => getuser(),
             'title' => $data['title'],
 	    'description' => $data['description'],
 	    'steps' => $data['steps'],
