@@ -13,6 +13,8 @@
 
 Route::get('/', 'PagesController@home');
 Route::get('uploadrecipes', 'UploadRecipesController@uploadrecipes');
+Route::get('profile', 'UserController@profile');
+Route::post('profile', 'UserController@update_avatar');
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');

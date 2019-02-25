@@ -25,7 +25,7 @@ class UploadRecipesController extends Controller
 
 
     public function getuser() {
-	return Auth::User()->username;
+	return \Auth::User()->id;
      }
 
 
@@ -71,7 +71,7 @@ class UploadRecipesController extends Controller
     protected function create(array $data)
     {
         return UploadRecipe::create([
-            'username' => getuser(),
+            'userid' => getuser(),
             'title' => $data['title'],
 	    'description' => $data['description'],
 	    'steps' => $data['steps'],

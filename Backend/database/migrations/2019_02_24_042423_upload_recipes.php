@@ -15,7 +15,7 @@ class UploadRecipes extends Migration
     {
         Schema::create('uploadrecipes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username');
+            $table->string('userid');
             $table->string('title');
 	    $table->string('description');
 	    $table->string('steps');
@@ -31,6 +31,6 @@ class UploadRecipes extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('uploadrecipes');
     }
 }

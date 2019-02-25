@@ -20,7 +20,7 @@
 </head>
 
 <body>
-	<!-- Navbar -->
+<!-- Navbar -->
 	<div class="container-fluid">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<a class="navbar-brand" href="/">DataBae Recipes</a>
@@ -59,7 +59,7 @@
 				<a href="/uploadrecipes" class="btn btn-secondary navbar-btn login-btn" style="margin-right: 50px">Upload a Recipe</a>
 				<li class="nav-item dropdown">
 					<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-					<img class="rounded-circle" width="30px" height="30px" src="/storage/avatars/{{ Auth::user()->avatar }}" /></img> {{ Auth::user()->username }} <span class="caret"></span>
+						{{ Auth::user()->username }} <span class="caret"></span>
 					</a>
 
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -81,33 +81,60 @@
 			</ul>
 		</nav>
 	</div>
-	<!-- Forms -->
-	<div class="container" style="max-width: 500px;">
-		<form>
-			<div class="form group">
-				<label for="inputTitle">Title</label>
-				<input type="Title" class="form-control" id="inputTitle">
-				<label for="exampleTextarea">Recipe Description</label>
-				<textarea class="form-control" id="recipeDescription" rows="3"></textarea>
-				<label for="exampleTextarea">Recipe Steps</label>
-				<textarea class="form-control" id="recipeDescription" rows="3"></textarea>
-				<label for="exampleInputFile">File input</label>
-				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-				<small id="fileHelp" class="form-text text-muted">Upload an image for your recipe here.</small>
-				<a href="/" class="btn btn-primary navbar-btn login-btn" style="margin-right: 50px">Submit Your Recipe</a>
-			</div>
-		</form>
-	</div>
 
+    <div class="container">
+        <div class="row">
+            @if ($message = Session::get('success'))
+
+                <div class="alert alert-success alert-block">
+
+                    <button type="button" class="close" data-dismiss="alert">&#120</button>
+
+                    <strong>{{ $message }}</strong>
+
+                </div>
+
+            @endif
+
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+        <div class="row justify-content-center">
+
+            <div class="profile-header-container">
+                <div class="profile-header-img">
+                    <img class="rounded-circle" width="auto" height="150px" src="/storage/avatars/{{ $user->avatar }}" />
+                    <!-- badge -->
+                    <div class="rank-label-container">
+                        <span class="label label-default rank-label">{{$user->username}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+            <form action="/profile" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
+                    <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Footer -->
-	<footer class="page-footer font-small blue pt-4" style="text-align: center">
-		<p>Copyright &#169 2018 by DataBae Solutions, LLC</p>
-	</footer>
+	<script src="js/bootstrap.min.js"></script>	
 </body>
-
 </html>
