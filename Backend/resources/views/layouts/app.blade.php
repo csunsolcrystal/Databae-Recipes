@@ -9,9 +9,9 @@
 	<!-- Navbar -->
 	@include('includes.header')
 
-	<div id="main" class="row">
+	<main class="py-4">
 		@yield('content')
-	</div>
+	</main>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
