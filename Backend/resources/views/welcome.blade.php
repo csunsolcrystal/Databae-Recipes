@@ -21,9 +21,9 @@
 	<title>Databae</title>
 </head>
 
-	@section('navbar')
 <body>
 	<!-- Navbar -->
+	
 	<!-------------------- Image Slideshow -------------------->
 	<div class="container">
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

@@ -26,9 +26,9 @@
 
 </head>
 	
-<body>
-	<!-- Navbar -->
-	<div class="container-fluid">
+@section('navbar')
+	<div id="app">
+		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<a class="navbar-brand" href="/">DataBae Recipes</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,28 +52,24 @@
 					</div>
 				</form>
 			</div>
-			<!-- Sign in Button -->
+			<!-- Right Side Of Navbar -->
 			<ul class="navbar-nav ml-auto">
 				<!-- Authentication Links -->
 				@guest
 				<div class="btn-group">
-						<a class="btn btn-dark navbar-btn login-btn" href="{{ route('login') }}">{{ __('Login') }}</a>
-						@if (Route::has('register'))
-						<a class="btn btn-danger navbar-btn login-btn" href="{{ route('register') }}">{{ __('Register') }}</a>
-						@endif
+					<a class="btn btn-dark navbar-btn login-btn" href="{{ route('login') }}">{{ __('Login') }}</a>
+					@if (Route::has('register'))
+					<a class="btn btn-danger navbar-btn login-btn" href="{{ route('register') }}">{{ __('Register') }}</a>
+					@endif
 				</div>
 				@else
-				<a href="/uploadrecipes" class="btn btn-secondary navbar-btn login-btn" style="margin-right: 50px">Upload a Recipe</a>
 				<li class="nav-item dropdown">
 					<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 					<img class="rounded-circle" width="30px" height="30px" src="/storage/avatars/{{ Auth::user()->avatar }}" /></img> {{ Auth::user()->username }} <span class="caret"></span>
 					</a>
-
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="/profile">
-                                        	Profile
-                                    		</a>
-
+						 <a class="dropdown-item" href="/profile">
+                                        Profile
+                                    </a>
 						<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 							{{ __('Logout') }}
@@ -87,34 +83,10 @@
 				@endguest
 			</ul>
 		</nav>
+		<main class="py-4">
+			@yield('content')
+		</main>
 	</div>
-	<!-- Forms -->
-	<div class="container" style="max-width: 500px;">
-		<form>
-			<div class="form group">
-				<label for="inputTitle">Title</label>
-				<input type="Title" class="form-control" id="inputTitle">
-				<label for="exampleTextarea">Recipe Description</label>
-				<textarea class="form-control" id="recipeDescription" rows="3"></textarea>
-				<label for="exampleTextarea">Recipe Steps</label>
-				<textarea class="form-control" id="recipeDescription" rows="3"></textarea>
-				<label for="exampleInputFile">File input</label>
-				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-				<small id="fileHelp" class="form-text text-muted">Upload an image for your recipe here.</small>
-				<a href="/" class="btn btn-primary navbar-btn login-btn" style="margin-right: 50px">Submit Your Recipe</a>
-			</div>
-		</form>
-	</div>
-
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Footer -->
-	<footer class="page-footer font-small blue pt-4" style="text-align: center">
-		<p>Copyright &#169 2018 by DataBae Solutions, LLC</p>
-	</footer>
 </body>
 
 </html>
