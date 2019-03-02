@@ -1,27 +1,5 @@
-@extends('layouts.app')
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Other CSS -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/signin.css">
-
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="img/favicon2.ico" />
-
-	<title>Databae</title>
-</head>
-
 <body>
+	@extends('layouts.app')
 	<!-- Navbar -->
 	
 	<!-------------------- Image Slideshow -------------------->
@@ -146,5 +124,3 @@
 		<p>Copyright &#169 2018 by DataBae Solutions, LLC</p>
 	</footer>
 </body>
-
-</html>

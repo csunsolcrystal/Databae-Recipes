@@ -25,7 +25,7 @@
 	<link rel="shortcut icon" href="/img/favicon2.ico" />
 
 </head>
-	
+
 <body>
 	<!-- Navbar -->
 	<div class="container-fluid">
@@ -57,22 +57,22 @@
 				<!-- Authentication Links -->
 				@guest
 				<div class="btn-group">
-						<a class="btn btn-dark navbar-btn login-btn" href="{{ route('login') }}">{{ __('Login') }}</a>
-						@if (Route::has('register'))
-						<a class="btn btn-danger navbar-btn login-btn" href="{{ route('register') }}">{{ __('Register') }}</a>
-						@endif
+					<a class="btn btn-dark navbar-btn login-btn" href="{{ route('login') }}">{{ __('Login') }}</a>
+					@if (Route::has('register'))
+					<a class="btn btn-danger navbar-btn login-btn" href="{{ route('register') }}">{{ __('Register') }}</a>
+					@endif
 				</div>
 				@else
 				<a href="/uploadrecipes" class="btn btn-secondary navbar-btn login-btn" style="margin-right: 50px">Upload a Recipe</a>
 				<li class="nav-item dropdown">
 					<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-					<img class="rounded-circle" width="30px" height="30px" src="/storage/avatars/{{ Auth::user()->avatar }}" /></img> {{ Auth::user()->username }} <span class="caret"></span>
+						<img class="rounded-circle" width="30px" height="30px" src="/storage/avatars/{{ Auth::user()->avatar }}" /></img> {{ Auth::user()->username }} <span class="caret"></span>
 					</a>
 
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="/profile">
-                                        	Profile
-                                    		</a>
+							Profile
+						</a>
 
 						<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -88,24 +88,6 @@
 			</ul>
 		</nav>
 	</div>
-	<!-- Forms -->
-	<div class="container" style="max-width: 500px;">
-		<form>
-			<div class="form group">
-				<label for="inputTitle">Title</label>
-				<input type="Title" class="form-control" id="inputTitle">
-				<label for="exampleTextarea">Recipe Description</label>
-				<textarea class="form-control" id="recipeDescription" rows="3"></textarea>
-				<label for="exampleTextarea">Recipe Steps</label>
-				<textarea class="form-control" id="recipeDescription" rows="3"></textarea>
-				<label for="exampleInputFile">File input</label>
-				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-				<small id="fileHelp" class="form-text text-muted">Upload an image for your recipe here.</small>
-				<a href="/" class="btn btn-primary navbar-btn login-btn" style="margin-right: 50px">Submit Your Recipe</a>
-			</div>
-		</form>
-	</div>
-
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
