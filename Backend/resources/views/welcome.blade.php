@@ -23,7 +23,7 @@
 
 <body>
 	<!-- Navbar -->
-@yield('navbar')
+@section('navbar')
 	<!-------------------- Image Slideshow -------------------->
 	<div class="container">
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
