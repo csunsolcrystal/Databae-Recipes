@@ -25,7 +25,7 @@
 	<link rel="shortcut icon" href="/img/favicon2.ico" />
 
 </head>
-
+@section('navbar')
 	<div id="app">
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
