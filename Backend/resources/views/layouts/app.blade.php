@@ -7,7 +7,7 @@
 
 <body>
 	<!-- Navbar -->
-	@include('includes.header')
+	@include('header')
 
 	<main class="py-4">
 		@yield('content')
