@@ -7,9 +7,8 @@
 
 <body>
 	<!-- Navbar -->
-	<div class="container-fluid">
-		@include('includes.header')
-	</div>
+	@include('includes.header')
+
 	<div id="main" class="row">
 		@yield('content')
 	</div>
