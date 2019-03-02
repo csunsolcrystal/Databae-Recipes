@@ -26,7 +26,6 @@
 
 </head>
 
-<body background="img/foodbg.jpg">
 	<div id="app">
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
