@@ -1,7 +1,6 @@
+@extends('layouts.app')
 <body>
-	@extends('layouts.app')
-	<!-- Navbar -->
-	
+	@section('content')
 	<!-------------------- Image Slideshow -------------------->
 	<div class="container">
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
