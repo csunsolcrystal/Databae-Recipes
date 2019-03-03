@@ -7,7 +7,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="\browse">Browse Recipes</a>
+					<a class="nav-link" href="/browse">Browse Recipes</a>
 				</li>
 			</ul>
 			<form class="form-inline ml-auto mr-auto">
