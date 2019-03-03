@@ -13,7 +13,7 @@
 				<div class="carousel-item active">
 					<img class="d-block w-100" src="img/burg.jpg" alt="First slide">
 					<div class="carousel-caption d-none d-md-block">
-						<h1>Spicy Bacon Burger</h1>
+						<h1>Spicy Bacon Burgers</h1>
 						<p>Something with a little heat!</p>
 					</div>
 				</div>
