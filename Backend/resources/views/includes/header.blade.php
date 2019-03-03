@@ -36,7 +36,7 @@
 			<a href="/uploadrecipes" class="btn btn-secondary navbar-btn login-btn" style="margin-right: 50px">Upload a Recipe</a>
 			<li class="nav-item dropdown">
 				<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-					<img class="rounded-circle" width="30px" height="30px" src="/storage/avatars/{{ Auth::user()->avatar }}" /> {{ Auth::user()->username }} <span class="caret"></span>
+					<img class="rounded-circle" width="30px" height="30px" src="/storage/avatars/{{ Auth::user()->avatar }}" /></img> {{ Auth::user()->username }} <span class="caret"></span>
 				</a>
 
 				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
