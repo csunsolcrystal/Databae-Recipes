@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.applogin')
 
 <!DOCTYPE html>
 <html lang="en">
