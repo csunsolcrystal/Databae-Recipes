@@ -15,6 +15,7 @@ Route::get('/', 'PagesController@home');
 Route::get('uploadrecipes', 'UploadRecipesController@uploadrecipes');
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::post('profile', 'UserController@update_profile');
+Route::get('browse', 'PagesController@browse');
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');

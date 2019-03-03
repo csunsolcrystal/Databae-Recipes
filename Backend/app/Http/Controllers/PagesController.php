@@ -20,5 +20,7 @@ public function login() {
 public function uploadrecipes() {
 	return view('uploadrecipes');
 	}
-
+public function browse() {
+	return view('browse');
+	}
 }
