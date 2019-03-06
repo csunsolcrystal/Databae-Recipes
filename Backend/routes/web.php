@@ -12,10 +12,15 @@
 */
 
 Route::get('/', 'PagesController@home');
-Route::get('uploadrecipes', 'UploadRecipesController@uploadrecipes');
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::post('profile', 'UserController@update_profile');
-Route::get('browse', 'PagesController@browse');
+
+Route::get('/recipes', 'RecipesController@index')->name('recipes');
+Route::get('uploadrecipes', 'RecipesController@create');
+Route::post('uploadrecipes', 'RecipesController@store');
+Route::get('/recipes/{recipe}', 'RecipesController@show');
+Route::post('/recipes/{recipe}/replies', 'RepliesController@store');
+
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');

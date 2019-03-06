@@ -6,15 +6,30 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class="nav-link" href="/browse">Browse Recipes</a>
+				<li class="nav-item dropdown">
+					<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+					Browse Recipes<span class="caret"></span></a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="/recipes">
+						All
+					</a>
+
+					<a class="dropdown-item" href="/recipes?popular=1">
+						Popular
+					</a>
+
+					 @if (auth()->check())
+                               <a class="dropdown-item" href="/recipes?by={{ auth()->user()->username }}">
+						My Recipes
+					</a>
+                            @endif
 				</li>
 			</ul>
 			<form class="form-inline ml-auto mr-auto">
 				<div class="btn-group">
 					<input class="form-control" type="text" placeholder="Search Recipes..." aria-label="Search" style="width: 500px">
 					<button class="btn btn-default" type="submit">
-						<img src="img/search_icon.png" alt="Smiley face" height="20" width="20">
+						<img src="/img/search_icon.png" alt="Smiley face" height="20" width="20">
 					</button>
 				</div>
 			</form>

@@ -36,6 +36,13 @@ class UserController extends Controller
 
         $user = \Auth::user();
 
+	if($user->avatar != 'user.jpg') {
+		$image_path = public_path().'/storage/avatars/'.$user->avatar;
+	    if(\File::exists($image_path)) {
+	  	unlink($image_path);
+		}
+	}
+
         $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
 
         $request->avatar->storeAs('avatars',$avatarName);
