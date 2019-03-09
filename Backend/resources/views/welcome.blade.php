@@ -45,4 +45,4 @@
 <!-- Bottom Content	-->
 @endsection;
 
-@extends('index.recipes');
+@extends('recipes.index');
