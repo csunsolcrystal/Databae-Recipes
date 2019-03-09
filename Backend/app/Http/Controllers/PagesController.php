@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Recipe;
+use App\Filters\RecipeFilters;
+
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-public function home() {
-	return view('welcome');
+public function home(RecipeFilters $filters) {
+	//return view('welcome');
+$recipes = $this->getRecipes($filters);
+       return view('welcome', compact('welcome'));
+		 return view('welcome', compact('welcome'));
 	}
 
 public function signup() {
@@ -23,4 +29,16 @@ public function uploadrecipes() {
 public function browse() {
 	return view('browse');
 	}
+ /**
+     * Fetch all relevant recipes.
+     *
+     * @param RecipeFilters $filters
+     * @return mixed
+     */
+    protected function getRecipes(RecipeFilters $filters)
+    {
+        $recipes = Recipe::latest()->filter($filters);
+          return $recipes->get();
+    }
+
 }
