@@ -12,8 +12,7 @@ class PagesController extends Controller
 public function home(RecipeFilters $filters) {
 	//return view('welcome');
 $recipes = $this->getRecipes($filters);
-       return view('welcome', compact('welcome'));
-		 return view('welcome', compact('welcome'));
+return view('welcome', compact('recipes'));
 	}
 
 public function signup() {
