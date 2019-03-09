@@ -43,5 +43,6 @@
 	</div>
 </div>
 <!-- Bottom Content	-->
-@extends($recipes. 'recipes.index');
 @endsection;
+
+@extends('index.recipes');
