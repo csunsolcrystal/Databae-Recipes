@@ -11,6 +11,7 @@
 
 	<main class="py-4">
 		@yield('content')
+		@yield('bottomcontent')
 	</main>
 
 	<!-- Optional JavaScript -->
