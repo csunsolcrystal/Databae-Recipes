@@ -5,7 +5,7 @@
 		<div class="card-group">
 			@foreach($recipes as $recipe)
 			<a href='/recipes/{{$recipe->id}}'>
-			<div class="card">
+			<div class="card-image">
 				<img class="card-img-top" width="369px" height="247px" object-fit: cover src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
 				<div class="card-body">
 					<h5 class="card-title"><a href='/recipes/{{$recipe->id}}'>{{ $recipe->title }}</a></h5>
