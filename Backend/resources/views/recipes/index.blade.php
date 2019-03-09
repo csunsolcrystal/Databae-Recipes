@@ -5,8 +5,8 @@
 		<div class="card-group">
 			@foreach($recipes as $recipe)
 			<a href='/recipes/{{$recipe->id}}'>
-			<div class="card">
-				<img class="card" style="width: 18rem; height: 10rem; object-fit: cover;" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
+			<div class="card" style="width: 18rem; height: 10rem; object-fit: cover;">
+				<img class="card-img-top" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
 				<div class="card-body">
 					<h5 class="card-title"><a href='/recipes/{{$recipe->id}}'>{{ $recipe->title }}</a></h5>
 					<p class="card-text">{{ str_limit($recipe->body, $limit = 150, $end = '...') }}</p>
