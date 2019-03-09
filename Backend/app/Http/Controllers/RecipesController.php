@@ -26,7 +26,6 @@ class RecipesController extends Controller
     {
        $recipes = $this->getRecipes($filters);
        return view('recipes.index', compact('recipes'));
-		 return view('welcome', compact('recipes'));
     }
 
     /**

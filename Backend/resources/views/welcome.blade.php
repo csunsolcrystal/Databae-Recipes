@@ -43,5 +43,5 @@
 	</div>
 </div>
 <!-- Bottom Content	-->
-@include('recipes.index')
+
 @endsection
