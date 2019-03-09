@@ -4,7 +4,7 @@
 <div class="row">
 	<div class="card-group">
 		<div class="col">
-			@foreach($recipes as $recipe)
+			@foreach($recipes->chunk(3) as $recipe)
 			<a href='/recipes/{{$recipe->id}}'>
 				<div class="card" style="width: 18rem;">
 					<img src="/storage/recipes/{{ $recipe->picture }}" class="card-img-top" alt="{{ $recipe->title }}">
