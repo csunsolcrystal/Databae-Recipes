@@ -44,4 +44,6 @@
 </div>
 <!-- Bottom Content	-->
 @endsection;
-@include('recipes.index');
+@extend('recipes.index');
+@include('content');
+
