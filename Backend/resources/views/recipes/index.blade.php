@@ -6,7 +6,7 @@
 			@foreach($recipes as $recipe)
 			<a href='/recipes/{{$recipe->id}}'>
 			<div class="card">
-				<img class="crd-img-top img-responsive img-fluid" width="369px" height="247px" object-fit: cover src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
+				<img class="img-thumbnail" width="369px" height="247px" object-fit: cover src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
 				<div class="card-body">
 					<h5 class="card-title"><a href='/recipes/{{$recipe->id}}'>{{ $recipe->title }}</a></h5>
 					<p class="card-text">{{ str_limit($recipe->body, $limit = 150, $end = '...') }}</p>
