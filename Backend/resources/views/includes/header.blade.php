@@ -17,12 +17,6 @@
 					<a class="dropdown-item" href="/recipes?popular=1">
 						Popular
 					</a>
-
-					 @if (auth()->check())
-                               <a class="dropdown-item" href="/recipes?by={{ auth()->user()->username }}">
-						My Recipes
-					</a>
-                            @endif
 				</li>
 			</ul>
 			<form class="form-inline ml-auto mr-auto">
@@ -60,6 +54,12 @@
                                                      document.getElementById('logout-form').submit();">
 						{{ __('Logout') }}
 					</a>
+					
+										 @if (auth()->check())
+                               <a class="dropdown-item" href="/recipes?by={{ auth()->user()->username }}">
+						My Recipes
+					</a>
+                            @endif
 
 					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 						@csrf
