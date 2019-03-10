@@ -23,7 +23,7 @@ $rowCount = 0;
 	@php
 	$rowCount++;
 	@endphp
-	@if($rowCount % numofCols == 0)
+	@if($rowCount % $numofCols == 0)
 	<div class="row">
 		@endif
 		@endforeach
