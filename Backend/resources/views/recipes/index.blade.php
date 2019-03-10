@@ -23,8 +23,8 @@ $rowCount = 0;
 	@php
 	$rowCount++;
 	@endphp
-	@if($rowCount == 4)
+	@if($rowCount % rowCount == 0)
 	<div class="row">
-	@endif
-	@endforeach
-	@endsection
+		@endif
+		@endforeach
+		@endsection
