@@ -33,7 +33,3 @@ $rowCount++;
 @endif
 @endforeach
 @endsection
-=======
-</div>
-@endsection;
->>>>>>> bc489a9ca2c2f5a7f8228f0d5fd84c2b6db04d88
