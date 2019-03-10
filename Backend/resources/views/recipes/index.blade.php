@@ -9,6 +9,7 @@ $rowCount = 0;
 
 <div class="container">
 <div class="card-group">
+	<div class="row">
 	@foreach($recipes as $recipe)
 	<div class="card" style="width: 300px;">
 		<a href='/recipes/{{$recipe->id}}'>
@@ -28,6 +29,7 @@ $rowCount = 0;
 	<div class="row">
 		@endif
 		@endforeach
+		</div>
 		@endsection
 	</div>
 </div>
