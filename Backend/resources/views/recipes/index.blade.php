@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('bottomcontent')
-@foreach ($products->chunk(3) as $chunk)
+@foreach ($recipes->chunk(3) as $recipe)
 <div class="row">
 <div class="card-group">
 	@foreach($recipes as $recipe)
