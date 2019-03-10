@@ -7,7 +7,7 @@ $numofCols = 4;
 $rowCount = 0;
 @endphp
 
-	<div class="card-group">
+<div class="card-group">
 	@foreach($recipes as $recipe)
 	<div class="card">
 		<a href='/recipes/{{$recipe->id}}'>
@@ -24,9 +24,7 @@ $rowCount = 0;
 	$rowCount++;
 	@endphp
 	@if($rowCount % $numofCols == 0)
-	@php
-	echo 'div class="card-group">'
-	@endphp
-	@endif
-	@endforeach
-@endsection
+	<div class="card-group">
+		@endif
+		@endforeach
+		@endsection
