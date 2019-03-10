@@ -9,7 +9,7 @@ $rowCount = 0;
 
 <div class="card-group">
 	@foreach($recipes as $recipe)
-	<div class="card>
+	<div class="card" style="width: 300px;">
 		<a href='/recipes/{{$recipe->id}}'>
 			<img class="card-img-top" width="369px" height="247px" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
 			<div class="card-body">
