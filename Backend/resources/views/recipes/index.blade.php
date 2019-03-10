@@ -3,7 +3,7 @@
 @section('bottomcontent')
 
 @php
-$numofCols = 4;
+$numofCols = 3;
 $rowCount = 0;
 @endphp
 
