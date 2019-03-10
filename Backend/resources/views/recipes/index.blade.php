@@ -24,10 +24,10 @@ $rowCount = 0;
 	@php
 	$rowCount++;
 	@endphp
-		@endforeach
-		@if($rowCount % $numofCols == 0)
+	@if($rowCount % $numofCols == 0)
 	<div class="row">
 		@endif
+		@endforeach
 	</div>
 </div>
 </div>
