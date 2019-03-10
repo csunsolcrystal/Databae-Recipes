@@ -28,3 +28,5 @@ $rowCount = 0;
 		@endif
 		@endforeach
 		@endsection
+	</div>
+</div>
