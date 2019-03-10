@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('content')	
+@section('content')
+@foreach($collection->chunk(3) as $recipes)
 <div class="row">
 		<div class="card-group">
 			<div class="col">
@@ -20,4 +21,5 @@
 	</div>
 	</div>
 </div>
+@endforeach
 @endsection
