@@ -2,8 +2,7 @@
 
 @section('bottomcontent')
 
-@foreach($recipes->chunk(3)) as $recipe)
-
+<div class="row">
 	<div class="card-group">
 		@foreach($recipes as $recipe)
 		<a href='/recipes/{{$recipe->id}}'>
@@ -19,5 +18,5 @@
 			@endforeach
 		</a>
 	</div>
-@endforeach;
+</div>
 @endsection;
