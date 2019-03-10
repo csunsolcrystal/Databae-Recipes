@@ -2,7 +2,7 @@
 
 @section('bottomcontent')
 <div class="card-group">
-	@foreach($recipes->chunk(3) as $recipe)
+	@foreach($recipes as $recipe)
 	<a href='/recipes/{{$recipe->id}}'>
 		<div class="card">
 			<img class="card-img-top" width="369px" height="247px" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
@@ -13,7 +13,8 @@
 				<p class="card-text"><small class="text-muted">Last updated {{ $recipe->updated_at->diffForHumans() }}</small></p>
 			</div>
 		</div>
-		
+
 		@endforeach
-</a>
+	</a>
+</div>
 @endsection;
