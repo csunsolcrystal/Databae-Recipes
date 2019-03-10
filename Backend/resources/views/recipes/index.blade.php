@@ -35,7 +35,7 @@ $rowCount = 0;
 		@if($rowCount == 3)
 		<div class="card-group">
 		@endif
+			</div>
 		@endforeach
-	</div>
 </div>
 @endsection
