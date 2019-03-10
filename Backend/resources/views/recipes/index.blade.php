@@ -2,7 +2,7 @@
 
 @section('bottomcontent')
 
-@foreach(array_chunk($recipes, 3) as $recipe)
+@foreach(chunk($recipes, 3) as $recipe)
 <div class="row">
 
 	<div class="card-group">
