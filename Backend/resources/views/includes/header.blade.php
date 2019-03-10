@@ -49,16 +49,17 @@
 					<a class="dropdown-item" href="/profile">
 						Profile
 					</a>
-
-					<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-						{{ __('Logout') }}
-					</a>
 					
 										 @if (auth()->check())
                                <a class="dropdown-item" href="/recipes?by={{ auth()->user()->username }}">
 						My Recipes
 					</a>
+
+				<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+						{{ __('Logout') }}
+					</a>
+
                             @endif
 
 					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

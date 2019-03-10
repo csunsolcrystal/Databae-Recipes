@@ -42,10 +42,11 @@
 		</a>
 	</div>
 </div>
-<!-- Bottom Content	-->
-@endsection;
+<!-- Bottom Content -->
+@endsection
 
 @section('bottomcontent')
+<div class="container" style="margin-top: 50px">
 <div class="card-group">
 	@foreach($recipes as $recipe)
 	<a href='/recipes/{{$recipe->id}}'>
@@ -58,6 +59,9 @@
 				<p class="card-text"><small class="text-muted">Last updated {{ $recipe->updated_at->diffForHumans() }}</small></p>
 			</div>
 		</div>
+		@if($loop->iteration == 6) @php break; @endphp @endif
+		@if($loop->iteration % 3 == 0) </div><div class="card-group"> @endif
 		@endforeach
+	</div>
 </div></a>
-@endsection;
+@endsection
