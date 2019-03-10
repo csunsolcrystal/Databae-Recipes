@@ -20,12 +20,11 @@ $rowCount = 0;
 			</div>
 		</a>
 	</div>
-</div>
-@php
-$rowCount++;
-@endphp
-@if($rowCount == 4)
-<div class="card-group"></div>
-	@endif
-	@endforeach
-	@endsection
+	@php
+	$rowCount++;
+	@endphp
+	@if($rowCount == 4)
+	<div class="card-group"></div>
+		@endif
+		@endforeach
+		@endsection
