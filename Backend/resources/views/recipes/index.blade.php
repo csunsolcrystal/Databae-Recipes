@@ -2,15 +2,13 @@
 
 @section('bottomcontent')
 
-<<<<<<< HEAD
 @php
 $numofCols = 4;
 $rowCount = 0;
 @endphp
-=======
+
 <div class="row">
->>>>>>> bc489a9ca2c2f5a7f8228f0d5fd84c2b6db04d88
-	<div class="card-group">
+<!--	<div class="card-group">-->
 		@foreach($recipes as $recipe)
 		<div class="card">
 		<a href='/recipes/{{$recipe->id}}'>
@@ -23,11 +21,13 @@ $rowCount = 0;
 				</div>
 			</div>
 		</a>
-	</div>
-<<<<<<< HEAD
-@php $rowCount++;
+<!--	</div>-->
+@php 
+$rowCount++;
 @endphp
-@if($rowCount % $numofCols == 0) @php echo '</div><div class="row">'
+@if($rowCount % $numofCols == 0) 
+@php 
+ echo 'div class="row">'
 @endphp
 </div>
 @endif
