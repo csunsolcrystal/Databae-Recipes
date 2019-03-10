@@ -2,12 +2,14 @@
 
 @section('bottomcontent')
 
-@foreach($recipes->chunk(3)) as $recipe)
-
+@php
+$numofCols = 4;
+$rowCount = 0;
+@endphp
 	<div class="card-group">
 		@foreach($recipes as $recipe)
+		<div class="card">
 		<a href='/recipes/{{$recipe->id}}'>
-			<div class="card">
 				<img class="card-img-top" width="369px" height="247px" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
 				<div class="card-body">
 					<h5 class="card-title"><a href='/recipes/{{$recipe->id}}'>{{ $recipe->title }}</a></h5>
@@ -16,8 +18,13 @@
 					<p class="card-text"><small class="text-muted">Last updated {{ $recipe->updated_at->diffForHumans() }}</small></p>
 				</div>
 			</div>
-			@endforeach
 		</a>
 	</div>
-@endforeach;
-@endsection;
+@php $rowCount++;
+@endphp
+@if($rowCount % $numofCols == 0) @php echo '</div><div class="row">'
+@endphp
+</div>
+@endif
+@endforeach
+@endsection
