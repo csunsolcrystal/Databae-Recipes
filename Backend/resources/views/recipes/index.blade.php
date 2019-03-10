@@ -24,8 +24,8 @@ $rowCount = 0;
 		@php
 		$rowCount++;
 		@endphp
+		@if($rowCount == 3)
 	</div>
-	@if($rowCount == 3)
 	<div class="card-group">
 		@endif
 		@endforeach
