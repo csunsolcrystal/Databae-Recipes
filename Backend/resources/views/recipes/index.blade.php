@@ -24,14 +24,14 @@ $rowCount = 0;
 		@php
 		$rowCount++;
 		@endphp
-		@if($rowCount == 3)
+		@if($rowCount == 5)
 	</div>
 	<div class="card-group">
 		@php
 		$rowCount == 0;
 		@endphp
 		@endif
+		@endforeach
 	</div>
-	@endforeach
 </div>
 @endsection
