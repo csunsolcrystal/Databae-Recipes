@@ -19,7 +19,6 @@
 		</div>
 		<div class="row">
 			@endif
-			@endforeach
 		</div></a>
 	</div>
 </div>
