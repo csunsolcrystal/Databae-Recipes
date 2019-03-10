@@ -7,7 +7,7 @@ $numofCols = 4;
 $rowCount = 0;
 @endphp
 
-<div class="card-group">
+<div class="row">
 	@foreach($recipes as $recipe)
 	<div class="card" style="width: 18rem;">
 		<a href='/recipes/{{$recipe->id}}'>
