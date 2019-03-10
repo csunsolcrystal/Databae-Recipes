@@ -7,6 +7,7 @@ $numofCols = 3;
 $rowCount = 0;
 @endphp
 
+<div class="container">
 <div class="card-group">
 	@foreach($recipes as $recipe)
 	<div class="card" style="width: 300px;">
@@ -29,4 +30,5 @@ $rowCount = 0;
 		@endforeach
 		@endsection
 	</div>
+</div>
 </div>
