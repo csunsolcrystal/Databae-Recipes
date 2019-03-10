@@ -25,7 +25,7 @@ $rowCount = 0;
 	$rowCount++;
 	@endphp
 	@if($rowCount % $numofCols == 0)
-	<div class="row">
+	<div class="card-group">
 		@endif
 		@endforeach
 	</div>
