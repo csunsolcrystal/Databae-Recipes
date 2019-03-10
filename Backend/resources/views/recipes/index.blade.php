@@ -24,7 +24,7 @@ $rowCount = 0;
 	$rowCount++;
 	@endphp
 	@if($rowCount == 4)
-	<div class="card-group"></div>
-		@endif
-		@endforeach
-		@endsection
+	<div class="row">
+	@endif
+	@endforeach
+	@endsection
