@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('bottomcontent')
+<div class="card-group">
 @foreach ($recipes->chunk(3) as $recipe)
 <div class="row">
-	<div class="card-group">
+	
 		@foreach($recipes as $recipe)
 		<a href='/recipes/{{$recipe->id}}'>
 			<div class="card">
@@ -15,7 +16,6 @@
 					<p class="card-text"><small class="text-muted">Last updated {{ $recipe->updated_at->diffForHumans() }}</small></p>
 				</div>
 			</div>
-
 			@endforeach
 		</a>
 	</div>
