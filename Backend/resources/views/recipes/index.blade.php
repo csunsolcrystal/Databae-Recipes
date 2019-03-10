@@ -23,7 +23,7 @@ $rowCount = 0;
 	@php
 	$rowCount++;
 	@endphp
-	@if($rowCount % $numofCols == 0)
+	@if($rowCount == 4)
 	<div class="card-group">
 		@endif
 		@endforeach
