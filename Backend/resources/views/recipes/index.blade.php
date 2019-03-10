@@ -31,7 +31,7 @@ $rowCount = 0;
 		$rowCount == 0;
 		@endphp
 		@endif
-		@endforeach
 	</div>
+	@endforeach
 </div>
 @endsection
