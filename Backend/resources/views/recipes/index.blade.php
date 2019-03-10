@@ -7,8 +7,8 @@ $numofCols = 4;
 $rowCount = 0;
 @endphp
 
-<div class="row">
-	@foreach($recipes as $recipe)
+	@foreach($recipes as $recipe
+<div class="card-group">
 	<div class="card" style="width: 18rem;">
 		<a href='/recipes/{{$recipe->id}}'>
 			<img class="card-img-top" width="369px" height="247px" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
@@ -20,6 +20,7 @@ $rowCount = 0;
 			</div>
 		</a>
 	</div>
+	</div>
 	@php
 	$rowCount++;
 	@endphp
@@ -29,4 +30,4 @@ $rowCount = 0;
 		@endforeach
 		@endsection
 	</div>
-</div>
+
