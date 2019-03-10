@@ -27,6 +27,7 @@ $rowCount = 0;
 		@if($rowCount == 3)
 	</div>
 	<div class="card-group">
+		$rowCount == 0;
 		@endif
 		@endforeach
 	</div>
