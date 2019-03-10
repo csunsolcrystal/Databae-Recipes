@@ -30,6 +30,7 @@ $rowCount = 0;
 		@php
 		$rowCount == 0;
 		@endphp
+	</div>
 		@endif
 		@if($rowCount == 3)
 		<div class="card-group"></div>
