@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'no-reply@mail.databaerecipes.com'),
-        'name' => env('MAIL_FROM_NAME', 'No-Reply'),
+        'name' => env('MAIL_FROM_NAME', 'DataBae Solutions LLC'),
     ],
 
     /*
