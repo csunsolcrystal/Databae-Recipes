@@ -1,7 +1,8 @@
 # DataBae
 
 ### Development environment using Docker
-Navigate to same directory as Dockerfile
+Navigate to same directory as Dockerfile.
+
 Build the docker image:
 
 ```
