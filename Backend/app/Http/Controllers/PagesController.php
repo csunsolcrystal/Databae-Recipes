@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-public function home() {
-$recipes = Recipe::orderBy('replies_count', 'desc')->get();
+public function home(Recipe $recipes) {
+
+   $recipes = $recipes->orderBy('views', 'desc')->get();
 return view('welcome', compact('recipes'));
 	}
 

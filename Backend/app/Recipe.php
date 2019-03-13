@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recipe extends Model
 {
+	use Rateable;
+
     /**
      * Don't auto-apply mass assignment protection.
      *
@@ -22,8 +24,9 @@ class Recipe extends Model
         static::addGlobalScope('replyCount', function ($builder) {
             $builder->withCount('replies');
         });
-    }
-    /**
+   }
+   
+   /**
      * Get a string path for the recipe.
      *
      * @return string
@@ -41,6 +44,7 @@ class Recipe extends Model
     {
         return $this->hasMany(Reply::class);
     }
+
     /**
      * A recipe belongs to a creator.
      *
@@ -71,4 +75,5 @@ class Recipe extends Model
     {
         return $filters->apply($query);
     }
+
 }

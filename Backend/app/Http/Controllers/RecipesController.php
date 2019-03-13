@@ -88,6 +88,9 @@ class RecipesController extends Controller
      */
     public function show(Recipe $recipe)
     {
+	// increase view count
+	$recipe->increment('views');
+
          return view('recipes.show', [
             'recipe' => $recipe,
             'replies' => $recipe->replies()->paginate(20)

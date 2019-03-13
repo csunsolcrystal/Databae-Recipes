@@ -20,6 +20,7 @@ class CreateRecipesTable extends Migration
             $table->text('body');
 	    $table->text('recipe_steps');
 	    $table->string('picture')->default('default.jpg');
+	    $table->UnsignedInteger('views')->default(0);
             $table->timestamps();
         });
     }

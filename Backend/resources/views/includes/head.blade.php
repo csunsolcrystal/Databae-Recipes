@@ -16,6 +16,7 @@
 <!-- Styles -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="{{ asset('css/stars.css') }}" rel="stylesheet">
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="/img/favicon2.ico" />

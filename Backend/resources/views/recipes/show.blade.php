@@ -3,6 +3,31 @@
 @section('content')
     <div class="py-5">
     <div class="container">
+	<div class="card-body">
+	<div class="row">
+					@if (session('error'))
+					<div class="alert alert-danger">
+					<button type="button" class="close" data-dismiss="alert">&#215</button>
+						{{ session('error') }}
+					</div>
+					@endif
+
+@if (count($errors) > 0)
+						<div class="alert alert-danger">
+
+							<button type="button" class="close" data-dismiss="alert">&#215</button>
+
+							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<ul>
+								@foreach ($errors->all() as $error)
+								<li>{{ $error }}</li>
+								@endforeach
+							</ul>
+						</div>
+						@endif
+					</div>
+				</div>
+
       <div class="row">
         <div class="col-md-6 pb-4"><img class="card-img-top" src="/storage/recipes/{{ $recipe->picture }}" alt="Card image cap">
           <div class="card">
@@ -15,10 +40,45 @@
         </div>
         <div class="" style="">
           <div class="col-md-12">
-            <h2 class="pb-2" contenteditable="true">{{ $recipe->title }}&nbsp;<small class="text-muted"><br>Recipe by <a href="#">{{ $recipe->creator->username }}</a></small></h2>
+            <h2 class="pb-2" contenteditable="false">{{ $recipe->title }}&nbsp;<small class="text-muted"><br>Recipe by <a href="#">{{ $recipe->creator->username }}</a></small></h2>
             <div class="embed-responsive embed-responsive-16by9">
               <iframe src="https://www.youtube.com/embed/ctvlUvN6wSE?controls=0" allowfullscreen="" class="embed-responsive-item"></iframe>
             </div>
+		<form class="rating" name="rating" method="POST" id="product1">
+		{{ csrf_field() }}
+  <button type="submit" class="star" data-star="1">
+			&#9733;
+			<span class="screen-reader">1 Star</span>
+	</button>
+  
+  <button type="submit" class="star" data-star="2">
+			&#9733;
+			<span class="screen-reader">2 Stars</span>
+	</button>
+  
+  <button type="submit" class="star" data-star="3">
+			&#9733;
+			<span class="screen-reader">3 Stars</span>
+	</button>
+  
+  <button type="submit" class="star" data-star="4">
+			&#9733;
+			<span class="screen-reader">4 Stars</span>		       
+	</button>
+  
+  <button type="submit" class="star" data-star="5">
+			&#9733;
+			<span class="screen-reader">5 Stars</span>
+	</button>
+<input type="hidden" name="ratedAmount" id="ratedAmount">
+</form>
+<script src="/js/rating.js"></script>
+@if($recipe->hasRatings())
+<span class="a-icon-alt">{{ $recipe->getRating() }} stars out of 5 stars</span>
+@else
+<span class="a-icon-alt">It has yet to be rated!</span>
+@endif
+<p>{{ number_format($recipe->views) }} {{ str_plural('view', number_format($recipe->views)) }}</p>
           </div>
         </div>
       </div>
@@ -53,6 +113,8 @@
       <div class="row">
         <div class="col-md-12">
 	 @if (auth()->check())
+	<div>
+       </div>
 	    <form method="POST" action="{{ $recipe->path() . '/replies' }}">
 		 {{ csrf_field() }}
 

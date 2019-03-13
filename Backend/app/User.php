@@ -27,4 +27,23 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the route key name for Laravel.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
+    /**
+     * Fetch all recipes that were created by the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function recipes()
+    {
+        return $this->hasMany(Recipe::class)->latest();
+    }
 }
