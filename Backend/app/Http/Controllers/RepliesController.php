@@ -24,6 +24,8 @@ class RepliesController extends Controller
             'body' => request('body'),
             'user_id' => auth()->id()
         ]);
+       // Make the updated_at column update the timestamps when there is a new reply
+	$recipe->touch();
         return back();
     }
 }

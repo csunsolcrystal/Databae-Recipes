@@ -88,7 +88,8 @@ class RecipesController extends Controller
      */
     public function show(Recipe $recipe)
     {
-	// increase view count
+	// increase view count but also prevent timestamps from being changed
+	$recipe->timestamps = false;
 	$recipe->increment('views');
 
          return view('recipes.show', [
