@@ -5,8 +5,8 @@
 		<div class="card-group">
 			@foreach($recipes as $recipe)
 			<a href='/recipes/{{$recipe->id}}'>
-			<div class="card">
-				<img class="card-img-top" width="100%" height="247px" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
+			<div class="card" style="max-width: 369px;">
+				<img class="card-img-top" width="369px" height="247px" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
 				<div class="card-body">
 					<h5 class="card-title"><a href='/recipes/{{$recipe->id}}'>{{ $recipe->title }}</a></h5>
 					@if($recipe->hasRatings())<p class"card-text">@for($i=0; $i < round($recipe->getRating()); $i++) <span class="fa fa-star checked"></span>@endfor @for($i2 = 0; $i2< 5-round($recipe->getRating()); $i2++) <span class="fa fa-star"></span>@endfor</p>@endif
