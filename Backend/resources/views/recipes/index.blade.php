@@ -18,5 +18,4 @@
 			@if($loop->iteration % 3 == 0) </div><div class="card-group"> @endif
 			@endforeach
 		</div></a>
-	</div>
-@endsection
+	</div>@endsection
