@@ -76,26 +76,17 @@ class UserController extends Controller
 	if ($request->has('form2')) {
 	   
 	$request->validate([
-	   'first-name' => 'string|max:255',
-	   'last-name' => 'string|max:255',
+	   'first-name' => 'alpha|max:255',
+	   'last-name' => 'alpha|max:255',
 	]);
 
 	$user = \Auth::user();
 
-	if(ctype_alpha($request->get('first-name'))) {
 	$user->first_name = $request->get('first-name');
-	}
-
-	if(ctype_alpha($request->get('last-name'))) {
 	$user->last_name = $request->get('last-name');
-	}
 	
-	if(!ctype_alpha($request->get('first-name')) || !ctype_alpha($request->get('last-name'))) {
-	return redirect()->back()->with("errorname","Names can only contain letters!");
-	} else {
 	$user->save();
 	return redirect()->back()->with("successname","Name changed successfully!");
-	}
 
 	} //personal information form2
     
