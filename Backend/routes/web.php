@@ -40,9 +40,11 @@ Route::group(['as' => 'user.'], function() {
 }
 */
 
+/*
 Route::group(['as' => 'user.'], function() {
     Route::any('/profile/{users}', [
         'as'    => 'profile',
         'uses'  => 'UserController@viewProfile'
     ]);
 }
+*/
