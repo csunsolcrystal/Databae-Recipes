@@ -15,8 +15,6 @@ Route::get('/', 'PagesController@home');
 Route::get('profile', 'UserController@profile')->name('profile');
 Route::post('profile', 'UserController@update_profile');
 
-Route::get('user/ryan', 'PageController@user');
-
 Route::get('/recipes', 'RecipesController@index')->name('recipes');
 Route::get('uploadrecipes', 'RecipesController@create');
 Route::post('uploadrecipes', 'RecipesController@store');
@@ -28,3 +26,24 @@ Route::get('/recipes/{recipe}/edit', 'RecipesController@edit)');
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
+
+
+
+
+/*
+Route::get('/user/{user}', 'UserController@viewProfile');
+
+Route::group(['as' => 'user.'], function() {
+    Route::any('/profile/{userId}', [
+        'as'    => 'profile',
+        'uses'  => 'UserController@viewProfile'
+    ]);
+}
+*/
+
+Route::group(['as' => 'user.'], function() {
+    Route::any('/profile/{users}', [
+        'as'    => 'profile',
+        'uses'  => 'UserController@viewProfile'
+    ]);
+}
