@@ -52,11 +52,11 @@ class UserController extends Controller
 
         return back()
             ->with('success','You have successfully upload image.');
-	
+
 	} //avatar form1
 
 	if ($request->has('form3')) {
-	
+
 	$request->validate([
 	   'current-password' => 'required',
 	   'new-password' => 'required|string|min:6|confirmed',
@@ -74,7 +74,7 @@ class UserController extends Controller
 	} //password form3
 
 	if ($request->has('form2')) {
-	   
+
 	$request->validate([
 	   'first-name' => 'alpha|max:255',
 	   'last-name' => 'alpha|max:255',
@@ -84,12 +84,27 @@ class UserController extends Controller
 
 	$user->first_name = $request->get('first-name');
 	$user->last_name = $request->get('last-name');
-	
+
 	$user->save();
 	return redirect()->back()->with("successname","Name changed successfully!");
 
 	} //personal information form2
-    
-    }
+
+  }
+
+//testing out view user profile
+  public function viewProfile($userId = null) {
+          $user = users::where('username', $username)->first();
+
+          if($userId != null) {
+              $user = users::find($userId);
+          } else {
+              $user = users::find(Auth::user()->id);
+          }
+
+          return view('user/profile', [
+              'user' => $user
+          ]);
+      }
 
 }

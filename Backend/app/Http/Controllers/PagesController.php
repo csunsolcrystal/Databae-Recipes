@@ -40,5 +40,5 @@ public function browse() {
 	}
 public function user(){
 	return view('user');
-	}
+}
 }
