@@ -41,6 +41,7 @@
         <div class="" style="">
           <div class="col-md-12">
             <h2 class="pb-2" contenteditable="false">{{ $recipe->title }}&nbsp;<small class="text-muted"><br>Recipe by <a href="#">{{ $recipe->creator->username }}</a></small></h2>
+				 <a href="#">{{$recipe->path}}</a>
             <div class="embed-responsive embed-responsive-16by9">
               <iframe src="https://www.youtube.com/embed/ctvlUvN6wSE?controls=0" allowfullscreen="" class="embed-responsive-item"></iframe>
             </div>

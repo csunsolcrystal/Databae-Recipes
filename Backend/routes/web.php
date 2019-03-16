@@ -23,6 +23,7 @@ Route::post('uploadrecipes', 'RecipesController@store');
 Route::get('/recipes/{recipe}', 'RecipesController@show');
 Route::post('/recipes/{recipe}/replies', 'RepliesController@store');
 Route::post('/recipes/{recipe}', 'RatingController@store');
+Route::get('/recipes/{recipe}/edit', 'RecipesController@edit)');
 
 Auth::routes();
 
