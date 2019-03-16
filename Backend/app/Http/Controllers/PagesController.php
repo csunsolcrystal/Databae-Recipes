@@ -38,4 +38,7 @@ public function uploadrecipes() {
 public function browse() {
 	return view('browse');
 	}
+public function user(){
+	return view('user');
+}
 }
