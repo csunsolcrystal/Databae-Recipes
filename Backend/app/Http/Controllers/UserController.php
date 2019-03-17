@@ -92,19 +92,4 @@ class UserController extends Controller
 
   }
 
-//testing out view user profile
-  public function viewProfile($userId = null) {
-          $user = users::where('username', $username)->first();
-
-          if($userId != null) {
-              $user = users::find($userId);
-          } else {
-              $user = users::find(Auth::user()->id);
-          }
-
-          return view('user/profile', [
-              'user' => $user
-          ]);
-      }
-
 }

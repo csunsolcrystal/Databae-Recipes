@@ -26,16 +26,8 @@ Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
 
+Route::get('user/{id}', function ($id) {    
+ $user = App\User::findOrFail($id);
+ return view('user', compact('user')); 
+});
 
-
-
-/*
-Route::get('/user/{user}', 'UserController@viewProfile');
-
-Route::group(['as' => 'user.'], function() {
-    Route::any('/profile/{userId}', [
-        'as'    => 'profile',
-        'uses'  => 'UserController@viewProfile'
-    ]);
-}
-*/
