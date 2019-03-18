@@ -28,6 +28,6 @@ Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('user/{id}', function ($id) {    
  $user = App\User::findOrFail($id);
- return view('user', compact('user')); 
+ return view('user', compact('user', $user)); 
 });
 

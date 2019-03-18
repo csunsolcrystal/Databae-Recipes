@@ -25,6 +25,7 @@ class RecipesController extends Controller
     public function index(RecipeFilters $filters)
     {
        $recipes = $this->getRecipes($filters);
+	$recipes = Recipe::paginate(15);
        return view('recipes.index', compact('recipes'));
     }
 

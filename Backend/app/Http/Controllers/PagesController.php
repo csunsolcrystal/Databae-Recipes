@@ -12,9 +12,15 @@ class PagesController extends Controller
 public function home() {
 // Collect all the recipes ordered by views then sort them into an 'array'
 $recipes = Recipe::oldest()->orderBy('views', 'desc')->get();
+
+//if our recipes are completely empty return empty recipes, otherwise, continue
+	if($recipes->isEmpty())
+	  return view('welcome', compact('recipes'));
+
 	foreach($recipes as $recipe) {
 	$newrecipes[] = $recipe;
       }
+
       // Using the new array, sort the rating by descending values by comparing
 usort($newrecipes,function(Recipe $recipe, Recipe $recipe2){
 	if($recipe->hasRatings() && $recipe2->hasRatings())
