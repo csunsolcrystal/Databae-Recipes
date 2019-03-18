@@ -77,13 +77,14 @@ class User extends Authenticatable
 	  return 0;
 
 	  $count = 0;
-	  $totalRatings = 0;
+	  $totalRatings = 1;
 	  forEach($recipes as $recipe) {
 		if($recipe->hasRatings()) {
 	      $count += $recipe->getRating();
 		$totalRatings += 1;
 	     }
 	  }
+	
 	return round($count/$totalRatings, 2);
     }
 
