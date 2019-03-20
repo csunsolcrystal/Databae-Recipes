@@ -33,9 +33,9 @@
 			<textarea class="form-control" name="body" id="recipeDescription" rows="3"></textarea>
 
 			<label for="exampleTextarea">Recipe Steps</label>
-			<textarea class="form-control" name="recipe_steps" id="recipeDescription" rows="3"></textarea>
+			<textarea class="form-control" name="recipe_steps" placeholder="Put each step on its own each line." id="recipeDescription" rows="3"></textarea>
 
-			<label for="exampleInputFile">File input</label>
+			<label for="exampleInputFile">Upload Cover image</label>
 			@csrf
 			<input type="file" class="form-control-file" name="picture" id="pictureFile" aria-describedby="fileHelp">
 			<small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>

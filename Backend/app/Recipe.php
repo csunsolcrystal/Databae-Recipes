@@ -1,13 +1,35 @@
 <?php
 namespace App;
 use App\Filters\RecipeFilters;
+use App\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
+use Nicolaslopezj\Searchable\SearchableTrait;
+
 class Recipe extends Model
 {
-	use Rateable;
+	use Rateable, SearchableTrait;
 
+     protected $searchable = [
+        'columns' => [
+            'recipes.title' => 10,
+	    'users.username'=> 5,
+	    'recipes.body' => 3,
+        ],
+        'joins' => [
+            'users' => ['recipes.user_id', 'users.id'],
+	    'ratings' => ['recipes.id', 'ratings.rated_id'],
+        ],
+	'groupBy' => 'recipes.id'
+    ];
+
+     public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+	
     /**
      * Don't auto-apply mass assignment protection.
      *

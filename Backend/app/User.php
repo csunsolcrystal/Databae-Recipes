@@ -20,13 +20,11 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * The attributes that should be visible in arrays.
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $visible = ['username', 'first_name', 'last_name'];
 
     /**
      * Get the route key name for Laravel.

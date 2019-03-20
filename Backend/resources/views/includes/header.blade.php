@@ -19,14 +19,18 @@
 					</a>
 				</li>
 			</ul>
-			<form class="form-inline ml-auto mr-auto">
+			<form class="typeahead ml-auto mr-auto" role="search">
+				{{ csrf_field() }}
 				<div class="btn-group">
-					<input class="form-control" type="text" placeholder="Search Recipes..." aria-label="Search" style="width: 500px">
+					<div class="u-posRelative">
+					<input class="form-control search-input" name="q" type="search" autocomplete="off" placeholder="Search recipes..." aria-label="Search" style="width: 500px">
+					</div>
+					<div class="Typeahead-menu"></div>
 					<button class="btn btn-default" type="submit">
-						<img src="/img/search_icon.png" alt="Smiley face" height="20" width="20">
+						<img src="/img/search_icon.png" alt="Smiley face" height="20px" width="20px">
 					</button>
 				</div>
-			</form>
+			</form>		
 		</div>
 		<!-- Sign in Button -->
 		<ul class="navbar-nav ml-auto">
@@ -72,6 +76,7 @@
 	</nav>
 </div>
 
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>

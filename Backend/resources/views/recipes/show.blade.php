@@ -11,12 +11,9 @@
 						{{ session('error') }}
 					</div>
 					@endif
-
 @if (count($errors) > 0)
 						<div class="alert alert-danger">
-
 							<button type="button" class="close" data-dismiss="alert">&#215</button>
-
 							<strong>Whoops!</strong> There were some problems with your input.<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
@@ -27,7 +24,6 @@
 						@endif
 					</div>
 				</div>
-
       <div class="row">
         <div class="col-md-6 pb-4"><img class="card-img-top" src="/storage/recipes/{{ $recipe->picture }}" alt="Card image cap">
           <div class="card">
@@ -44,6 +40,11 @@
             <div class="embed-responsive embed-responsive-16by9">
               <iframe src="https://www.youtube.com/embed/ctvlUvN6wSE?controls=0" allowfullscreen="" class="embed-responsive-item"></iframe>
             </div>
+		@if($recipe->isRated)
+		@if($recipe->hasRatings())<p class="card-text">@for($i=0; $i < round($recipe->getRating()); $i++) <span class="fa fa-star checked"></span>@endfor @for($i2 = 0; $i2< 5-round($recipe->getRating()); $i2++) <span class="fa fa-star"></span>@endfor</p>
+		@else <p class="card-text"><small class="text-muted">It has yet to be rated!</small></p>
+		@endif
+		@else
 		<form class="rating" name="rating" method="POST" id="product1">
 		{{ csrf_field() }}
   <button type="submit" class="star" data-star="1">
@@ -72,6 +73,7 @@
 	</button>
 <input type="hidden" name="ratedAmount" id="ratedAmount">
 </form>
+@endif
 <script src="/js/rating.js"></script>
 @if($recipe->hasRatings())
 <span class="a-icon-alt">{{ $recipe->getRating() }} stars out of 5 stars</span>
@@ -87,8 +89,10 @@
           <div class="card">
             <div class="card-header">Recipe Instructions</div>
             <div class="card-body">
-              <h4>Recipe Steps</h4>
-              <p>{{ $recipe->recipe_steps }}</p>
+	 @foreach(preg_split("/((\r?\n)|(\r\n?))/", $recipe->recipe_steps) as $step)
+		<h5>Step {{ $loop->iteration }}:</h5>
+              <p style="margin-bottom: 50px">{{ $step }}</p>
+	 @endforeach
             </div>
           </div>
         </div>

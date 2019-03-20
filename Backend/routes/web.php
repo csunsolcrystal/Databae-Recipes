@@ -31,3 +31,5 @@ Route::get('user/{id}', function ($id) {
  return view('user', compact('user', $user)); 
 });
 
+Route::get('find', 'SearchController@find');
+

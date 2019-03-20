@@ -71,11 +71,14 @@ trait Rateable
      */
     public function getRating()
     {
+	if($this->hasRatings()) {
         $sumofratings = $this->ratings->where('rated_id', $this->id)->where('rated_type', get_class($this))->sum('rated_amount');
 	$totalratings = $this->ratings->where('rated_id', $this->id)->where('rated_type', get_class($this))->count();
 	$rating = ($sumofratings * 5) / ($totalratings * 5);
 	
 	return round($rating, 2);
+	}
+	return 0;
     }
 
 }
