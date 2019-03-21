@@ -81,8 +81,7 @@
           <div class="row d-flex justify-content-center">
             <div class="col-md-12 mb-4">
               <h6 class="text-center mb-3">
-	      @if($recipe->isRated)
-	      @if($recipe->hasRatings())@for($i=0; $i < round($recipe->getRating()); $i++) <span class="fa fa-star checked"></span>@endfor @for($i2 = 0; $i2< 5-round($recipe->getRating()); $i2++) <span class="fa fa-star"></span>@endfor @endif Overall Rating: {{ $recipe->getRating() }}</h6>
+	      @if($recipe->isRated)@for($i=0; $i < round($recipe->getRating()); $i++) <span class="fa fa-star checked"></span>@endfor @for($i2 = 0; $i2< 5-round($recipe->getRating()); $i2++) <span class="fa fa-star"></span>@endfor Overall Rating: {{ $recipe->getRating() }}</h6>
               @else	      
 	<form class="rating" name="rating" method="POST" id="product1">
 		{{ csrf_field() }}
@@ -111,8 +110,9 @@
 			<span class="screen-reader">5 Stars</span>
 	</button>
 <input type="hidden" name="ratedAmount" id="ratedAmount">
-</form>     
-	  <h6 class="text-center mb-3">Overall rating: It has no ratings yet!</h6>
+</form>
+<script src="/js/rating.js"></script>     
+	  <h6 class="text-center mb-3">Overall rating: @if ($recipe->hasRatings()) {{ $recipe->getRating() }} @else It has no ratings yet! @endif</h6>
 	     @endif
 	      <h6 class="text-center mb-3"><i class="fas fa-clock mx-1"></i>Cooking time: 45 minutes | Prep time: 15 minutes</h6>
               <h6 class="text-center"><i class="fa fa-user fa-fw"></i>Total views: {{ $recipe->views }} | <i class="fas fa-comments mx-1"></i>Total Comments: {{$recipe->replies->count() }}</h6>
