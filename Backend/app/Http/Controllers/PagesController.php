@@ -34,7 +34,9 @@ return view('welcome', compact('recipes'));
 public function signup() {
 	return view('signup');
 	}
-
+public function categories() {
+	return view('recipes.categories');
+	}
 public function login() {
 	return view('login');
 	}

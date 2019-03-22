@@ -33,3 +33,5 @@ Route::get('user/{id}', function ($id) {
 
 Route::get('find', 'SearchController@find');
 
+Route::get('categories', 'PagesController@categories');
+
