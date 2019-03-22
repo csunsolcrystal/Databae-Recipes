@@ -14,7 +14,7 @@ class RecipesController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except(['index', 'show', 'categories']);
     }
 
     /**
@@ -38,6 +38,18 @@ class RecipesController extends Controller
     {
         return view('uploadrecipes', compact('uploadrecipes'));
     }
+
+   /**
+     * Categories
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function categories()
+    {
+        return view('recipes.categories', compact('recipes'));
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -80,7 +92,14 @@ class RecipesController extends Controller
 
         return redirect($recipe->path());    
     }
-
+	/**
+	*
+	*
+	* Categories
+	*
+       public function categories() {
+	return view('recipes.categories');
+	}
     /**
      * Display the specified resource.
      *

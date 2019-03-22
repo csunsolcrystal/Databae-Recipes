@@ -18,6 +18,7 @@ Route::post('profile', 'UserController@update_profile');
 Route::get('/recipes', 'RecipesController@index')->name('recipes');
 Route::get('uploadrecipes', 'RecipesController@create');
 Route::post('uploadrecipes', 'RecipesController@store');
+Route::get('/recipes/categories', 'RecipesController@categories');
 Route::get('/recipes/{recipe}', 'RecipesController@show');
 Route::post('/recipes/{recipe}/replies', 'RepliesController@store');
 Route::post('/recipes/{recipe}', 'RatingController@store');
@@ -33,5 +34,4 @@ Route::get('user/{id}', function ($id) {
 
 Route::get('find', 'SearchController@find');
 
-Route::get('categories', 'PagesController@categories');
 
