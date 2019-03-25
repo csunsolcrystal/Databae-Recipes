@@ -65,6 +65,8 @@ class RecipesController extends Controller
 	    'recipe_steps' => 'required',
 	    'picture' => 'image|nullable|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+	$steps = $request->recipe_steps;
+	$steps = preg_replace("/(\r?\n){2,}/", "\n", $steps);
 
 	 // Handle File Upload
         if($request->hasFile('picture')) {
@@ -86,7 +88,7 @@ class RecipesController extends Controller
             'user_id' => auth()->id(),
             'title' => request('title'),
             'body'  => request('body'),
-	    'recipe_steps' => request('recipe_steps'),
+	    'recipe_steps' => $steps,
 	    'picture' => $fileNameToStore
         ]);
 

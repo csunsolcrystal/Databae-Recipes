@@ -133,11 +133,15 @@
       <div class="row">
         <div class="col-md-6">
           <h2 class=""><i class="fas fa-book"></i>&nbsp;Directions</h2>
-           @foreach(preg_split("/((\r?\n)|(\r\n?))/", $recipe->recipe_steps) as $step)
-		<h5>Step {{ $loop->iteration }}:</h5>
-              <p style="margin-bottom: 50px">{{ $step }}</p>
-	 @endforeach
-        </div>
+		<div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ol>
+		@php $recipe->recipe_steps = preg_replace("/(\r?\n){2,}/", "\n\n", $recipe->recipe_steps); @endphp
+		@foreach(preg_split("/((\r?\n)|(\r\n?))/", $recipe->recipe_steps) as $step)
+                    <li>{{ $step }}</li>
+                @endforeach
+		</ol>
+            </div>
+                   </div>
         <div class="col-md-6">
           <h4 class="">Footnotes</h4>
           <p class="mt-4">{!! nl2br(e("Lorem ipsum dolor sit amet, ius erroribus incorrupte at, at nam etiam summo nostrum, sit ut sanctus convenire. Pro ad nullam intellegam. Ei sea vivendum petentium, eam eu primis deleniti. Suas modus dictas ut vim. His doming nonumes id. Mea ad exerci praesent repudiare.

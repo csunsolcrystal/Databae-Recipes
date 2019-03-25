@@ -20,7 +20,7 @@
 
 <!-- Styles -->
 <link rel="stylesheet" href="/css/bootstrap.css">
-<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <link href="/css/stars.css" rel="stylesheet">
 <link href="/css/search.css" rel="stylesheet">
 
