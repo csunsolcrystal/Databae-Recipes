@@ -23,7 +23,6 @@ $recipes = Recipe::oldest()->orderBy('views', 'desc')->get();
 
       // Using the new array, sort the rating by descending values by comparing
 usort($newrecipes,function(Recipe $recipe, Recipe $recipe2){
-	if($recipe->hasRatings() && $recipe2->hasRatings())
     return $recipe->getRating() < $recipe2->getRating();
 });
        //repopulate the $recipes variable with the sorted rating recipes as priority
