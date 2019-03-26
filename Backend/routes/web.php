@@ -21,7 +21,9 @@ Route::post('uploadrecipes', 'RecipesController@store');
 Route::get('/recipes/categories', 'RecipesController@categories');
 Route::get('/recipes/{recipe}', 'RecipesController@show');
 Route::post('/recipes/{recipe}/replies', 'RepliesController@store');
-Route::post('/recipes/{recipe}', 'RatingController@store');
+Route::post('/recipes/{recipe}/ratings', 'RatingController@store');
+Route::post('/recipes/{recipe}/favorites', 'RatingController@storeFavoriteRecipe');
+Route::post('/replies/{reply}/favorites', 'RatingController@storeFavoriteReply');
 
 Auth::routes();
 

@@ -2,7 +2,7 @@
 
 @section('content')
 <!-------------------- Image Slideshow -------------------->
-<div class="container">
+<div class="container mt-4">
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -47,7 +47,7 @@
 
 @section('bottomcontent')
 <div class="container" style="margin-top: 50px">
-<div class="card-group">
+<div class="card-group mb-4">
 	@foreach($recipes as $recipe)
 		<a href="/recipes/{{$recipe->id}}" class="card" style="max-width: 369px;color: inherit; text-decoration: inherit;z-index: 1;">
 			<img class="card-img-top" width="369px" height="247px" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">

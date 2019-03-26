@@ -12,6 +12,17 @@ trait Rateable
     {
         return $this->morphMany(Rating::class, 'rated');
     }
+	
+	/**
+     * A recipe can be favorited.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function favorites()
+    {
+        return $this->morphMany(FavoriteRecipe::class, 'favorited');
+    }
+	
     /**
      * Rate the current recipe.
      *
@@ -32,6 +43,16 @@ trait Rateable
     public function isRated()
     {
       return !! $this->ratings->where('user_id', auth()->id())->where('rated_id', $this->id)->where('rated_type', get_class($this))->count();
+    }
+	
+	 /**
+     * Determine if the current recipe has been favorited by user.
+     *
+     * @return boolean
+     */
+    public function isFavorited()
+    {
+      return !! $this->favorites->where('user_id', auth()->id())->where('favorited_id', $this->id)->where('favorited_type', get_class($this))->count();
     }
 
     /**
@@ -63,7 +84,18 @@ trait Rateable
     {
         return $this->ratings->count();
     }
-
+	
+	/**
+     * Get the number of favorited ratings for the recipe.
+     *
+     * @return integer
+     */
+    public function getFavoritesCountAttribute()
+    {
+        return $this->favorites->count();
+    }
+	
+	
     /**
      * Calculate the average rating of the recipe.
      *

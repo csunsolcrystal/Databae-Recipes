@@ -2,7 +2,7 @@
 
 @section('content')	
 <div class="container" style="margin-top: 50px">
-		<div class="card-group">
+		<div class="card-group mb-4">
 			@foreach($recipes as $recipe)
 			<a href="/recipes/{{$recipe->id}}" class="card" style="max-width: 369px;color: inherit; text-decoration: inherit;z-index: 1;">
 				<img class="card-img-top" width="369px" height="247px" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
@@ -14,7 +14,7 @@
 					<p class="card-text"><small class="text-muted">Last updated {{ $recipe->updated_at->diffForHumans() }}</small></p>
 				</div>
 			</a>
-			@if($loop->iteration % 3 == 0) </div><div class="card-group"> @endif
+			@if($loop->iteration % 3 == 0) </div><div class="card-group mb-4"> @endif
 			@endforeach
 		</div></a>
 		<div class="row justify-content-center mt-3"> {{ $recipes->links() }} </div>

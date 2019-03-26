@@ -57,7 +57,7 @@
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-12"><img class="img-fluid d-block rounded-circle mx-auto" src="/storage/avatars/{{ $recipe->creator->avatar }}" width="120px" height="120px">
+        <div class="col-md-12" style="margin-bottom: 2rem;"><img class="img-fluid d-block rounded-circle mx-auto" style="margin-top: 2rem;" src="/storage/avatars/{{ $recipe->creator->avatar }}" width="120px" height="120px">
           <h3 class="text-center pt-5"><i class="fa fa-user fa-fw lead"></i>{{ $recipe->creator->first_name }} {{ $recipe->creator->last_name }}</h3>
           <h6 class="text-center text-secondary" style=""><a href="/user/{{ $recipe->creator->id }}">{{'@'}}{{ $recipe->creator->username }}</a></h6>
           <center></center>
@@ -83,7 +83,7 @@
               <h6 class="text-center mb-3">
 	      @if($recipe->isRated)@for($i=0; $i < round($recipe->getRating()); $i++) <span class="fa fa-star checked"></span>@endfor @for($i2 = 0; $i2< 5-round($recipe->getRating()); $i2++) <span class="fa fa-star"></span>@endfor Overall Rating: {{ $recipe->getRating() }}</h6>
               @else	      
-	<form class="rating" name="rating" method="POST" id="product1">
+	<form class="rating" name="rating"  method="POST" action="/recipes/{{ $recipe->id }}/ratings" id="product1">
 		{{ csrf_field() }}
   <button type="submit" class="star" data-star="1">
 			&#9733;
@@ -116,6 +116,12 @@
 	     @endif
 	      <h6 class="text-center mb-3"><i class="fas fa-clock mx-1"></i>Cooking time: 45 minutes | Prep time: 15 minutes</h6>
               <h6 class="text-center"><i class="fa fa-user fa-fw"></i>Total views: {{ $recipe->views }} | <i class="fas fa-comments mx-1"></i>Total Comments: {{$recipe->replies->count() }}</h6>
+			  <form method="POST" action="/recipes/{{ $recipe->id }}/favorites">
+				{{ csrf_field() }}
+			<button type="submit" class="btn btn-danger mx-1">
+			<i class="fas fa-heart mx-1"></i>{{ $recipe->getFavoritesCountAttribute() }} {{ str_plural('Favorite', $recipe->getFavoritesCountAttribute()) }}
+			</button>
+			</form>
             </div>
           </div>
           <div class="row">
@@ -155,9 +161,9 @@ Dicit aperiam habemus sea et, audiam laboramus argumentum has te, cu pri everti 
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="pb-2">Comments</h3>
+          <h3 class="pb-2 border-bottom">Comments</h3>
 	<div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" style="width:800px; margin:0 auto;">
               <div class="row">
                 <div class="col-md-12">
                   <h5 class="text-center" ><i class="fas fa-heart mx-1"></i>Best Comment</h5>
@@ -170,26 +176,7 @@ Dicit aperiam habemus sea et, audiam laboramus argumentum has te, cu pri everti 
                   <p class="text-justify">This food was amazing!</p>
                   <div class="row">
                     <div class="col-md-12 mt-5">
-                      <ul class="social-links col-lg-12 col-md-12 col-6 list-unstyled d-flex justify-content-end"><a class="btn btn-secondary mx-2" href="#"><i class="fas fa-heart mx-1"></i>3 Favorites</a><a class="btn btn-secondary" href="#"><i class="fas fa-hands-helping mx-1"></i>1 Helpful</a></ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row">
-                <div class="col-md-12">
-                  <h5 class="text-center"><i class="fas fa-hands-helping mx-1">Highest Rated Comment</i></h5>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header d-flex justify-content-between"><a href="#">@username</a><small text="muted">3 days ago</small></div>
-                <div class="card-body">
-                  <h4>This requires some decent skills</h4>
-                  <p class="text-justify">Creative skills required</p>
-                  <div class="row">
-                    <div class="col-md-12 mt-5">
-                      <ul class="social-links col-lg-12 col-md-12 col-6 list-unstyled d-flex justify-content-end"><a class="btn btn-secondary mx-2" href="#"><i class="fas fa-heart mx-1"></i>3 Favorites</a><a class="btn btn-secondary" href="#"><i class="fas fa-hands-helping mx-1"></i>10 Helpful</a></ul>
+                      <ul class="social-links col-lg-12 col-md-12 col-6 list-unstyled d-flex justify-content-end"><a class="btn btn-danger mx-2" href="#"><i class="fas fa-heart mx-1"></i>3 Favorites</a></ul>
                     </div>
                   </div>
                 </div>
@@ -214,7 +201,7 @@ Dicit aperiam habemus sea et, audiam laboramus argumentum has te, cu pri everti 
 	    <form method="POST" action="{{ $recipe->path() . '/replies' }}">
 		 {{ csrf_field() }}
 
-          <div class="form-group mt-5"><textarea name="body" id="body" class="form-control mt-2" placeholder="Have something to say?" rows="5"></textarea><button type="submit" class="btn btn-default pt-2">Post</button></form>
+          <div class="form-group mt-5"><textarea name="body" id="body" class="form-control mt-2" placeholder="Have something to say?" rows="5"></textarea><button type="submit" class="btn btn-default mt-3">Post</button></form>
 	 @else
                     <p class="text-center">Please <a href="{{ route('login') }}">sign in</a> to participate in this
                         discussion.</p>

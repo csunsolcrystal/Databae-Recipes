@@ -1,5 +1,4 @@
-<div class="container-fluid">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light border shadow">
 		<a class="navbar-brand" href="/">DataBae Recipes</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -47,7 +46,7 @@
 				@endif
 			</div>
 			@else
-			<a href="/uploadrecipes" class="btn btn-secondary navbar-btn login-btn" style="margin-right: 50px;height: 50%;">Upload a Recipe</a>
+			<a href="/uploadrecipes" class="btn btn-secondary navbar-btn login-btn mt-1" style="margin-right: 50px;height: 50%;">Upload a Recipe</a>
 			<li class="nav-item dropdown">
 				<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 					<img class="rounded-circle" width="30px" height="30px" src="/storage/avatars/{{ Auth::user()->avatar }}" /> {{ Auth::user()->username }} <span class="caret"></span>
