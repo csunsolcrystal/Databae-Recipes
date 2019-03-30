@@ -66,6 +66,8 @@
     </div>
     <!-- Page Content -->
     <div class="container" style="margin-top: 50px">
+		<h1 class="my-4">{{ $category }} <small>All Recipes</small>
+      </h1>
 		<div class="card-group mb-4">
 			@foreach($recipes as $recipe)
 			<a href="/recipes/{{$recipe->id}}" class="card mr-4" style="max-width: 369px;color: inherit; text-decoration: inherit;z-index: 1;">
