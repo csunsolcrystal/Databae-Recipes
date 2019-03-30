@@ -19,6 +19,7 @@ Route::get('/recipes', 'RecipesController@index')->name('recipes');
 Route::get('uploadrecipes', 'RecipesController@create');
 Route::post('uploadrecipes', 'RecipesController@store');
 Route::get('/recipes/categories', 'RecipesController@categories');
+Route::get('/recipes/categories/{category}', 'RecipesController@categoryshow');
 Route::get('/recipes/{recipe}', 'RecipesController@show');
 Route::post('/recipes/{recipe}/replies', 'RepliesController@store');
 Route::post('/recipes/{recipe}/ratings', 'RatingController@store');

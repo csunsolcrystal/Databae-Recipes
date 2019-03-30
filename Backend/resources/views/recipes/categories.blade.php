@@ -74,7 +74,7 @@
     <div class="py-5">
       <div class="container">
         <div class="row">
-          <a href="" class="col-md-4 col-6 p-3" style="max-width: 369px;color: inherit; text-decoration: inherit;z-index: 1;"> <img class="d-block rounded" height="174px" src="/img/blur-breakfast-close-up-376464.jpg" width="348px">
+          <a href="/recipes/categories/breakfast" class="col-md-4 col-6 p-3" style="max-width: 369px;color: inherit; text-decoration: inherit;z-index: 1;"> <img class="d-block rounded" height="174px" src="/img/blur-breakfast-close-up-376464.jpg" width="348px">
             <h3 class="my-3"><b>Breakfast</b></h3>
             <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
           </a>

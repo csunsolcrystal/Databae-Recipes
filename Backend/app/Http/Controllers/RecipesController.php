@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Recipe;
+use App\Gallery;
 use App\Filters\RecipeFilters;
 use Validator;
 use Illuminate\Http\Request;
@@ -25,8 +26,37 @@ class RecipesController extends Controller
     public function index(RecipeFilters $filters)
     {
        $recipes = $this->getRecipes($filters);
-	$recipes = Recipe::paginate(15);
+	   $recipes = Recipe::paginate(15);
        return view('recipes.index', compact('recipes'));
+    }
+	
+	/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function categoryshow($category)
+    {
+	   $recipes = Recipe::where('category', $category)->paginate(6);
+	   $banner ="";
+	   $text1 = "";
+	   $text2= "";
+	   $title = "";
+	   if($category == "breakfast") {
+		   $title = "Breakfast and Brunch Recipes";
+		   $banner = "/img/beans-bread-breakfast-103124.jpg";
+		   $text1 = "Start your day with an easy pancake or omelet breakfast. Or plan a showstopping brunch with quiches, waffles, casseroles, and more!";
+		   $text2 = "Follow to get the latest breakfast and brunch recipes, articles and more!";
+	   }
+	
+       return view('recipes.categorypage', [
+            'recipes' => $recipes,
+			'banner' => $banner,
+			'text1' => $text1,
+			'text2' => $text2,
+			'title' => ucfirst($title),
+			'category' => ucfirst($category)
+        ]);
     }
 
     /**
@@ -61,14 +91,22 @@ class RecipesController extends Controller
     {	
 	$this->validate($request, [
             'title' => 'required|max:255',
-            'body' => 'required',
+			'category' => 'required',
+            'recipeDescription' => 'required',
+			'ingredients' => 'required',
+			'cookTime' => 'required|max:255',
+			'prepTime' => 'required|max:255',
 	    'recipe_steps' => 'required',
-	    'picture' => 'image|nullable|mimes:jpeg,png,jpg,gif,svg|max:2048'
+	    'picture' => 'image|nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
+		 'gallery.*' => 'image|nullable|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 	$steps = $request->recipe_steps;
 	$steps = preg_replace("/(\r?\n){2,}/", "\n", $steps);
+	
+	$ingredients = $request->ingredients;
+	$ingredients = preg_replace("/(\r?\n){2,}/", "\n", $ingredients);
 
-	 // Handle File Upload
+	 // Handle Cover File Upload
         if($request->hasFile('picture')) {
             // Get filename with extension            
 	 $filenameWithExt = $request->file('picture')->getClientOriginalName();
@@ -83,17 +121,38 @@ class RecipesController extends Controller
         } else {
             $fileNameToStore = 'default.jpg';
         }
-	  
+		
        $recipe = Recipe::create([
             'user_id' => auth()->id(),
             'title' => request('title'),
-            'body'  => request('body'),
+			'category' => request('category'),
+            'description' => request('recipeDescription'),
+			'ingredients' => $ingredients,
+			'tags' => request('tag'),
+			'footnotes' => request('footnotes'),
+			'cookTime' => request('cookTime'),
+			'prepTime' => request('prepTime'),
 	    'recipe_steps' => $steps,
 	    'picture' => $fileNameToStore
         ]);
+		
+		// Handle Gallery File Uploads
+		if($request->hasfile('gallery')) {
+			foreach($request->file('gallery') as $image) {
+				$form= new Gallery();
+				$name=time().'.'.$image->getClientOriginalName();
+				$image->move(public_path().'/storage/gallery/'.$recipe->id.'/', $name);
+				$data = $name;
+				$form->recipe_id = $recipe->id;
+				$form->filename=$data;
+				$form->save();
+			}
 
+		}
+		
         return redirect($recipe->path());    
     }
+	
 	/**
 	*
 	*
@@ -108,15 +167,16 @@ class RecipesController extends Controller
      * @param  \App\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function show(Recipe $recipe)
+    public function show(Recipe $recipe, Gallery $gallery)
     {
 	// increase view count but also prevent timestamps from being changed
 	$recipe->timestamps = false;
 	$recipe->increment('views');
-
+	$gallery = Gallery::where('recipe_id', $recipe->id)->get();
          return view('recipes.show', [
             'recipe' => $recipe,
-            'replies' => $recipe->replies()->paginate(20)
+            'replies' => $recipe->replies()->paginate(20),
+			'galleries' => $gallery
         ]);
     }
 

@@ -9781,3 +9781,6 @@ a.text-dark:hover {
   height: 40px;
   border-radius: 50%;
 }
+#sticky-footer {
+  flex-shrink: none;
+}

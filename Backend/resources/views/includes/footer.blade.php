@@ -1,3 +1,5 @@
-<div class="footer-copyright text-center py-3">
-	<p>Copyright &#169 2018 by DataBae Solutions, LLC</p>
-</div>
+<footer id="sticky-footer" class="py-5">
+    <div class="container text-center">
+      <small>Copyright &#169 2018 by DataBae Solutions, LLC</small>
+    </div>
+  </footer>

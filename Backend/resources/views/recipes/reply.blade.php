@@ -1,5 +1,5 @@
 
-  <div class="card">
+  <div class="card-fluid mt-3">
     <div class="card-header d-flex justify-content-between">
       <a href="/user/{{ $reply->owner->id }}">{{ '@' }}{{
       $reply->owner->username }}</a><small text="muted">{{

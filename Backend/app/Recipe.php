@@ -2,6 +2,7 @@
 namespace App;
 use App\Filters\RecipeFilters;
 use App\User;
+use App\Gallery;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -98,4 +99,17 @@ class Recipe extends Model
         return $filters->apply($query);
     }
 
+	public function galleryExists() {
+		return !! Gallery::where('recipe_id', $this->id)->count();
+	}
+	
+	 /**
+     * Get the number of photos for the recipe.
+     *
+     * @return integer
+     */
+    public function getGalleryCountAttribute()
+    {
+        return Gallery::where('recipe_id', $this->id)->count();
+    }
 }

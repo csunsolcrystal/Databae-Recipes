@@ -17,7 +17,13 @@ class CreateRecipesTable extends Migration
             $table->increments('id');
 	    $table->integer('user_id');
             $table->string('title');
-            $table->text('body');
+			$table->string('category');
+			$table->string('tags')->nullable();
+            $table->text('description');
+			$table->text('footnotes')->nullable();
+			$table->text('ingredients');
+			$table->string('cookTime');
+			$table->string('prepTime');
 	    $table->text('recipe_steps');
 	    $table->string('picture')->default('default.jpg');
 	    $table->UnsignedInteger('views')->default(0);
