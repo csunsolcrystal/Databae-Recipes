@@ -94,7 +94,10 @@
         <div class="col-md-6">
           <h2 class="text-center mb-4"><i class="fas fa-utensils"></i>&nbsp;Ingredients</h2>
           <ul class="">
-            <li><i>{{ $recipe->ingredients }}</i></li>
+			  @php $recipe->ingredients = preg_replace("/(\r?\n){2,}/", "\n\n", $recipe->ingredients); @endphp
+		@foreach(preg_split("/((\r?\n)|(\r\n?))/", $recipe->ingredients) as $ingredient)
+            <li><i>{{ $ingredient }}</i></li>
+			@endforeach
           </ul>
         </div>
         <div class="col-md-6">
@@ -159,7 +162,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h2 class=""><i class="fas fa-book"></i>&nbsp;Directions</h2>
+          <h2 class="mb-5"><i class="fas fa-book"></i>&nbsp;Directions</h2>
 		<div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                 <ol>
 		@php $recipe->recipe_steps = preg_replace("/(\r?\n){2,}/", "\n\n", $recipe->recipe_steps); @endphp

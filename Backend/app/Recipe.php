@@ -16,7 +16,7 @@ class Recipe extends Model
         'columns' => [
             'recipes.title' => 10,
 	    'users.username'=> 5,
-	    'recipes.body' => 3,
+	    'recipes.description' => 3,
         ],
         'joins' => [
             'users' => ['recipes.user_id', 'users.id'],

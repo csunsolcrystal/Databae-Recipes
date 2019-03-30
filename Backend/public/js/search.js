@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
         '<div class="ProfileCard-details">' +
           '<div class="ProfileCard-realName">'+data.title+'</div>' +
           '<div class="ProfileCard-screenName">&nbsp;@'+data.user.username+'</div>' +
-          '<div class="ProfileCard-description">'+data.body.substring(0, 150)+'</div>' +
+          '<div class="ProfileCard-description">'+data.description.substring(0, 150)+'</div>' +
         '</div>' +
 
         '<div class="ProfileCard-stats">' +

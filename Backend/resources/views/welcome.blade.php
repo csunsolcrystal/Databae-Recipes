@@ -49,7 +49,7 @@
 <div class="container" style="margin-top: 50px">
 <div class="card-group mb-4">
 	@foreach($recipes as $recipe)
-		<a href="/recipes/{{$recipe->id}}" class="card" style="max-width: 369px;color: inherit; text-decoration: inherit;z-index: 1;">
+		<a href="/recipes/{{$recipe->id}}" class="card mr-4" style="max-width: 369px;color: inherit; text-decoration: inherit;z-index: 1;">
 			<img class="card-img-top" width="369px" height="247px" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
 			<div class="card-body">
 				<h5 class="card-title">{{ $recipe->title }}</h5>

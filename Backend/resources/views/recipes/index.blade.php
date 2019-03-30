@@ -17,6 +17,5 @@
 			@if($loop->iteration % 3 == 0) </div><div class="card-group mb-4"> @endif
 			@endforeach
 		</div></a>
-		<div class="row justify-content-center mt-3"> {{ $recipes->links() }} </div>
 	</div>
 @endsection
