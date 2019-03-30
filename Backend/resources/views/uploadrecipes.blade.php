@@ -67,7 +67,7 @@
 			<label for="exampleInputFile">Upload Cover image</label>
 			@csrf
 			<input type="file" class="form-control-file" name="picture" id="pictureFile" aria-describedby="fileHelp">
-			<small id="fileHelp" class="form-text text-muted mb-4">Please upload a valid image file. Size of image should not be more than 2MB.</small>
+			<small id="fileHelp" class="form-text text-muted mb-4">Please upload a valid image file. Size of image should not be more than 10MB.</small>
 			
 			<label for="exampleInputFile">Upload Gallery Pictures (optional)</label>
 			 <div class="input-group control-group increment" >

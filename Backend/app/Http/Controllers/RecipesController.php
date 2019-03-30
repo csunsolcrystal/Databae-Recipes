@@ -97,8 +97,8 @@ class RecipesController extends Controller
 			'cookTime' => 'required|max:255',
 			'prepTime' => 'required|max:255',
 	    'recipe_steps' => 'required',
-	    'picture' => 'image|nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
-		 'gallery.*' => 'image|nullable|mimes:jpeg,png,jpg,gif,svg|max:2048'
+	    'picture' => 'image|nullable|mimes:jpeg,png,jpg,gif,svg|max:10000',
+		 'gallery.*' => 'image|nullable|mimes:jpeg,png,jpg,gif,svg|max:10000'
         ]);
 	$steps = $request->recipe_steps;
 	$steps = preg_replace("/(\r?\n){2,}/", "\n", $steps);
