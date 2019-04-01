@@ -41,6 +41,23 @@ class RecipesController extends Controller
 	   $text1 = "";
 	   $text2= "";
 	   $title = "";
+	   
+	  
+	   // recipes created on or after monday but before the next monday is picked
+	   foreach($recipes as $recipe) {
+		   if((strtotime($recipe->created_at) >= strtotime("monday this week")) && strtotime($recipe->created_at) <= strtotime("monday next week"))
+		$recipeweek[] = $recipe;
+      }
+	  
+	  // if there isnt any, then just grab random one
+	if (empty($recipeweek))
+	$recipeweek[] = $recipes;
+	
+	   // Using the new array, sort the rating by descending values by comparing
+	usort($recipeweek,function(Recipe $recipe, Recipe $recipe2){
+    return $recipe->getRating() < $recipe2->getRating();
+	});
+	
 	   if($category == "breakfast") {
 		   $title = "Breakfast and Brunch Recipes";
 		   $banner = "/img/beans-bread-breakfast-103124.jpg";
@@ -54,7 +71,8 @@ class RecipesController extends Controller
 			'text1' => $text1,
 			'text2' => $text2,
 			'title' => ucfirst($title),
-			'category' => ucfirst($category)
+			'category' => ucfirst($category),
+			'recipeweek' => $recipeweek[0]
         ]);
     }
 

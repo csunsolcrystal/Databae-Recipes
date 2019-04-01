@@ -49,21 +49,23 @@
         </div>
       </div>
     </div>
+	@if ($recipeweek != '')
     <div class="py-1 border-bottom">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="row">
-              <div class="col-lg-3 order-2 order-md-1 col-md-4"> <img class="d-block img-fluid" src="https://static.pingendo.com/img-placeholder-3.svg"> </div>
+              <div class="col-lg-3 order-2 order-md-1 col-md-4"> <img class="d-block img-fluid" style= "object-fit: cover;" src="/storage/recipes/{{ $recipeweek->picture }}"> </div>
               <div class="flex-column justify-content-center offset-lg-1 align-items-start order-1 order-md-2 col-md-8 d-flex p-3">
-                <h3>Recipe Title</h3>
-                <p class="mb-3">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary.</p> <a class="btn btn-primary" href="#">Read Recipe</a>
+                <h3>{{ $recipeweek->title }}</h3>
+                <p class="mb-3">{{ $recipeweek->description }}</p> <a class="btn btn-primary" href="/recipes/{{$recipeweek->id }}">Read Recipe</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+	@endif
     <!-- Page Content -->
     <div class="container" style="margin-top: 50px">
 		<h1 class="my-4">{{ $category }} <small>All Recipes</small>
