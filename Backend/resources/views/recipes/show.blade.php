@@ -33,7 +33,7 @@
 				@if ($recipe->galleryExists())
 				@foreach ($galleries as $gallery)
 				@if ($loop->iteration == 1)
-				 <div class="carousel-item active"> <img class="d-block img-fluid w-100 mx-auto" width="750px" src="/storage/gallery/{{ $recipe->id }}/{{ $gallery->filename }}" height="340px" style="">
+				 <div class="carousel-item active"> <img class="d-block img-fluid w-100 mx-auto" width="750px" src="/storage/gallery/{{ $recipe->id }}/{{ $gallery->filename }}" height="340px">
                 <div class="carousel-caption">
                   <h5 class="m-0">{{ $recipe->title }}</h5>
                   <p>Picture #{{ $loop->iteration }}</p>
@@ -49,7 +49,7 @@
 			  @endif
 			  @endforeach
 				@else
-              <div class="carousel-item active"> <img class="d-block img-fluid w-100 mx-auto" width="750px" src="/storage/recipes/{{ $recipe->picture }}" height="340px" style="">
+              <div class="carousel-item active"> <img class="d-block img-fluid w-100 mx-auto" width="750px" src="/storage/recipes/{{ $recipe->picture }}" height="340px">
                 <div class="carousel-caption">
                   <h5 class="m-0">{{ $recipe->title }}</h5>
                   <p>Picture #1</p>

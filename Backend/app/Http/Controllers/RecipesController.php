@@ -41,6 +41,7 @@ class RecipesController extends Controller
 	   $text1 = "";
 	   $text2= "";
 	   $title = "";
+	   $background = "";
 	   
 	  
 	   // recipes created on or after monday but before the next monday is picked
@@ -57,19 +58,58 @@ class RecipesController extends Controller
 	usort($recipeweek,function(Recipe $recipe, Recipe $recipe2){
     return $recipe->getRating() < $recipe2->getRating();
 	});
+	// this could of been done by arrays but got lazy will fix later
 	
 	   if($category == "breakfast") {
 		   $title = "Breakfast and Brunch Recipes";
 		   $banner = "/img/beans-bread-breakfast-103124.jpg";
 		   $text1 = "Start your day with an easy pancake or omelet breakfast. Or plan a showstopping brunch with quiches, waffles, casseroles, and more!";
 		   $text2 = "Follow to get the latest breakfast and brunch recipes, articles and more!";
+		   $background = "/img/bread-breakfast-coffee-374052.jpg";
 	   }
 	
+	 if($category == "lunch") {
+		   $title = "Lunch";
+		   $banner = "/img/burger-chips-dinner-70497.jpg";
+		   $text1 = "Start your day with an easy hamburger or delicate sandwiches. Or plan a showstopping lunch with sushi, chicken salad, burritos, and more!";
+		   $text2 = "Follow to get the latest lunch recipes, articles and more!";
+		   $background = "/img/bread-bun-burger-1639562.jpg";
+	   }
+	   
+	   if($category == "dinner") {
+		   $title = "Dinner";
+		   $banner = "/img/blur-close-up-cutlery-370984.jpg";
+		   $text1 = "Start your evening with an nice steak or delicious spaghetti. Or plan a showstopping dinner with barbecued chicken, homemade pizza, alfredo pasta, and more!";
+		   $text2 = "Follow to get the latest dinner recipes, articles and more!";
+		   $background = "/img/celebrate-celebration-cheers-1268558.jpg";
+	   }
+	   if($category == "dessert") {
+		   $title = "Dessert";
+		   $banner = "/img/cream-glass-strawberries-8382.jpg";
+		   $text1 = "Enjoy your day with an nice chocolate cake topped with whipped cream or homemade donuts topped with special toppings. Or plan a showstopping dessert with chocolate cake, homemade brownies, cupcakes, and more!";
+		   $text2 = "Follow to get the latest dessert recipes, articles and more!";
+		   $background = "/img/bakery-biscuit-cake-40516.jpg";
+	   }
+	   if($category == "snacks") {
+		   $title = "Appetizer/Snacks";
+		   $banner = "/img/close-up-delicious-dinner-1108775.jpg";
+		   $text1 = "Looking for a quick snack? How about some dishes involving chips with cheese and avocado dip? Or looking for an easy snack to make?";
+		   $text2 = "Follow to get the latest snack/appetizer recipes, articles and more!";
+		   $background = "/img/appetite-burger-cheeseburger-1484669.jpg";
+	   }
+	   if($category == "drinks") {
+		   $title = "drinks";
+		   $banner = "/img/alcohol-beverage-black-background-1028637.jpg";
+		   $text1 = "Looking for to make unique alcoholic drinks for the party? Try some of these recipes";
+		   $text2 = "Follow to get the latest drinks recipes, articles and more!";
+		   $background = "/img/alcohol-bar-beer-1283219.jpg";
+	   }
        return view('recipes.categorypage', [
             'recipes' => $recipes,
 			'banner' => $banner,
 			'text1' => $text1,
 			'text2' => $text2,
+			'background' => $background,
 			'title' => ucfirst($title),
 			'category' => ucfirst($category),
 			'recipeweek' => $recipeweek[0]

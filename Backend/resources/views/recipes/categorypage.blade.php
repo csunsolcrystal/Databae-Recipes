@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<body class="" style="background: url(/img/background-board-chillies-1435895.jpg);margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >
+<body class="" style="background: url({{ $background }});margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >
 <div class="border rounded-0 bg-light shadow container my-4">
     <div class="py-3">
       <div class="container">
@@ -26,9 +26,9 @@
                 <h1 class="text-light" style="	text-shadow: 0px 0px 8px black;">
                   <span class="title-section__text title">{{ $title }}</span>
                 </h1>
-                <span class="title-section__text subtitle text-white" style="	text-shadow: 0px 0px 8px black;"><i>{{ $text1 }}</i></span>
+                <span class="title-section__text subtitle text-white" style="	text-shadow: 0px 0px 8px black;">{{ $text1 }}</span>
                 <div class="title-section__follow ng-scope" data-ng-controller="ar_controllers_hub_stream" data-ng-init="init('bk', 78, 'Breakfast')">
-                  <span class="hub-follow-blurb text-white" style="	text-shadow: 0px 0px 8px black;"><i>{{ $text2 }}</i></span>
+                  <span class="hub-follow-blurb text-white" style="	text-shadow: 0px 0px 8px black;">{{ $text2 }}</span>
                   <a class="hub-follow" ng-class="{'highlighted': isFollowing}" ng-click="followStream()">
                     <span class="svg-icon--recipe-navbar--heart_off svg-icon--recipe-navbar--heart_off-dims"></span>
                     <span class="svg-icon--recipe-navbar--heart_on svg-icon--recipe-navbar--heart_on-dims"></span>
@@ -55,7 +55,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="row">
-              <div class="col-lg-3 order-2 order-md-1 col-md-4"> <img class="d-block img-fluid" style= "object-fit: cover;" src="/storage/recipes/{{ $recipeweek->picture }}"> </div>
+              <div class="col-lg-3 order-2 order-md-1 col-md-4"> <img class="d-block img-fluid" src="/storage/recipes/{{ $recipeweek->picture }}"> </div>
               <div class="flex-column justify-content-center offset-lg-1 align-items-start order-1 order-md-2 col-md-8 d-flex p-3">
                 <h3>{{ $recipeweek->title }}</h3>
                 <p class="mb-3">{{ $recipeweek->description }}</p> <a class="btn btn-primary" href="/recipes/{{$recipeweek->id }}">Read Recipe</a>
