@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,13 +16,13 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['userProfile']);
     }
 
     public function profile()
     {
         $user = \Auth::user();
-        return view('profile',compact('user',$user));
+        return view('settings',compact('user',$user));
     }
 
 	public function showChangePasswordForm(){
@@ -90,6 +92,11 @@ class UserController extends Controller
 
 	} //personal information form2
 
+  }
+  
+  public function userProfile($id) {
+	  $user = User::findOrFail($id);
+  return view('user', compact('user', $user)); 
   }
 
 }

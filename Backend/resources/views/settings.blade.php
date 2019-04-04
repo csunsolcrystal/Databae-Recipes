@@ -49,7 +49,7 @@
 
 					</div>
 					<div class="row justify-content-center">
-						<form action="/profile" method="post" enctype="multipart/form-data">
+						<form action="/settings" method="post" enctype="multipart/form-data">
 							@csrf
 							<div class="form-group">
 								<input type="file" class="form-control-file" name="avatar" id="avatarFile" aria-describedby="fileHelp">
@@ -81,7 +81,7 @@
 						{{ session('successpassword') }}
 					</div>
 					@endif
-					<form class="form-horizontal" method="POST" href="{{ route('profile') }}">
+					<form class="form-horizontal" method="POST" href="{{ route('settings') }}">
 						{{ csrf_field() }}
 
 						<div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
@@ -150,7 +150,7 @@
 						{{ session('successname') }}
 					</div>
 					@endif
-					<form class="form-horizontal" method="POST" href="{{ route('profile') }}">
+					<form class="form-horizontal" method="POST" href="{{ route('settings') }}">
 						{{ csrf_field() }}
 
 						<div class="form-group{{ $errors->has('first-name') ? ' has-error' : '' }}">

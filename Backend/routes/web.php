@@ -12,9 +12,11 @@
 */
 
 Route::get('/', 'PagesController@home');
-Route::get('profile', 'UserController@profile')->name('profile');
-Route::post('profile', 'UserController@update_profile');
+Route::get('settings', 'UserController@profile')->name('settings');
+Route::get('user/{id}', 'UserController@userProfile');
+Route::post('settings', 'UserController@update_profile');
 
+Route::get('/recipes/myrecipes', 'RecipesController@myrecipes')->name('recipes');
 Route::get('/recipes', 'RecipesController@index')->name('recipes');
 Route::get('uploadrecipes', 'RecipesController@create');
 Route::post('uploadrecipes', 'RecipesController@store');
@@ -30,10 +32,6 @@ Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
 
-Route::get('user/{id}', function ($id) {    
- $user = App\User::findOrFail($id);
- return view('user', compact('user', $user)); 
-});
 
 Route::get('find', 'SearchController@find');
 

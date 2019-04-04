@@ -23,9 +23,15 @@ class RecipesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(RecipeFilters $filters)
+    public function myrecipes(RecipeFilters $filters)
     {
        $recipes = $this->getRecipes($filters);
+       return view('recipes.myrecipes', compact('recipes'));
+    }
+	
+	public function index()
+    {
+	   $recipes = Recipe::paginate(15);
        return view('recipes.index', compact('recipes'));
     }
 	

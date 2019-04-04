@@ -8,7 +8,7 @@
 				<li class="nav-item dropdown">
 					<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 					Browse Recipes<span class="caret"></span></a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+					<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="/recipes">
 						All
 					</a>
@@ -52,16 +52,18 @@
 					<img class="rounded-circle" width="30px" height="30px" src="/storage/avatars/{{ Auth::user()->avatar }}" /> {{ Auth::user()->username }} <span class="caret"></span>
 				</a>
 
-				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="/profile">
+				<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
+										 @if (auth()->check())
+										 <a class="dropdown-item" href="/user/{{ auth()->user()->id }}">
 						Profile
 					</a>
-					
-										 @if (auth()->check())
-                               <a class="dropdown-item" href="/recipes?by={{ auth()->user()->username }}">
-						My Recipes
+                               <a class="dropdown-item" href="/recipes/myrecipes?by={{ auth()->user()->username }}">
+						Recipes
 					</a>
 
+					<a class="dropdown-item" href="/settings">
+						Settings
+					</a>
 				<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 						{{ __('Logout') }}
