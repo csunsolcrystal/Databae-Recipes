@@ -30,6 +30,9 @@ usort($newrecipes,function(Recipe $recipe, Recipe $recipe2){
 return view('welcome', compact('recipes'));
 	}
 
+public function landing() {
+	return view('landingpage');
+}
 public function signup() {
 	return view('signup');
 	}

@@ -3,7 +3,7 @@
 @section('content')	
 	 <div class="container">
 
-      <!-- Page Heading -->
+<!-- Page Heading -->
       <h1 class="my-4">All
         <small>Recipes</small>
       </h1>
@@ -13,7 +13,7 @@
       <div class="row mb-5">
         <div class="col-md-7">
           <a href="/recipes/{{$recipe->id}}">
-            <img class="img-fluid rounded mb-3 mb-md-0" width="700px" height = "300px" src="/storage/recipes/{{ $recipe->picture }}" alt="">
+            <img class="img-fluid rounded mb-3 mb-md-0" style="width: 700px; height:300px;" src="/storage/recipes/{{ $recipe->picture }}" alt="">
           </a>
         </div>
         <div class="col-md-5">

@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
+Route::get('/', 'PagesController@landing');
+Route::get('home', 'PagesController@home')->name('home');
+//Route::get('/', 'PagesController@home');
+
 Route::get('settings', 'UserController@profile')->name('settings');
 Route::get('user/{id}', 'UserController@userProfile');
 Route::post('settings', 'UserController@update_profile');
@@ -30,7 +33,7 @@ Route::post('/replies/{reply}/favorites', 'RatingController@storeFavoriteReply')
 
 Auth::routes();
 
-Route::get('home', 'HomeController@index')->name('home');
+//Route::get('home', 'HomeController@index')->name('home');
 
 
 Route::get('find', 'SearchController@find');
