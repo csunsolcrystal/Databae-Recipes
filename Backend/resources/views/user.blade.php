@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+<body style="background: url(/img/background-board-chillies-1435895.jpg);margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >
+<div class="border rounded-0 bg-light shadow container my-4">
+	 <div class="py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"> <a href="/home">Home</a> </li>
+              <li class="breadcrumb-item active">Profile</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
        <div class="py-5">
     <div class="container">
       <div class="row">
@@ -72,4 +86,6 @@
 	<div class="row justify-content-center mt-3"> {{ $user->recipes()->links() }} </div>
     </div>
   </div>
+  </div>
+  </body>
 @endsection

@@ -1,12 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+<body style="background: url(/img/background-board-chillies-1435895.jpg);margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >
+<div class="border rounded-0 bg-light shadow container my-4">
+<div class="py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"> <a href="/home">Home</a> </li>
+              <li class="breadcrumb-item active">Upload Recipes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 <!-- Forms -->
-<div class="container" style="max-width: 500px;">
+<div class="container" style="max-width: 600px;">
 
+@if (count($errors) > 0)
 <div class="card-body">
 	<div class="row">
-@if (count($errors) > 0)
 						<div class="alert alert-danger">
 
 							<button type="button" class="close" data-dismiss="alert">&#215</button>
@@ -18,10 +32,9 @@
 								@endforeach
 							</ul>
 						</div>
-						@endif
 					</div>
 				</div>
-			
+			@endif
 
 	<form class="form-horizontal" method="POST" enctype="multipart/form-data">
 		{{ csrf_field() }}
@@ -85,7 +98,7 @@
           </div>
         </div>
 
-			<button type="submit" class="btn btn-primary mt-4">
+			<button type="submit" class="btn btn-primary mt-4 mb-4">
 									Submit
 								</button>
 		</div>
@@ -108,4 +121,6 @@
 </script>
 
 </div>
+</div>
+</body>
 @endsection

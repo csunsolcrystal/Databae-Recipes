@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<body style="background: url(/img/background-board-chillies-1435895.jpg);margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >
+<div class="border rounded-0 bg-light shadow container my-4">
 <!-------------------- Image Slideshow -------------------->
 <div class="container mt-4">
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -62,8 +64,10 @@
 			</div>
 			</a>
 		@if($loop->iteration == 6) @php break; @endphp @endif
-		@if($loop->iteration % 3 == 0) </div><div class="card-group"> @endif
+		@if($loop->iteration % 3 == 0) </div><div class="card-group mb-4"> @endif
 		@endforeach
 	</div>
 </div>
+</div>
+</body>
 @endsection

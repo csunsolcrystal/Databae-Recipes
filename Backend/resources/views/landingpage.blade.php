@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div class="py-5 text-center text-white shadow-lg" style="position: relative; overflow: hidden;"> <video autoplay="" loop="" muted="" plays-inline="" style="-webkit-filter: brightness(.5); filter: brightness(.5); position: absolute; right: 0; top: 0; min-width:100%; z-index: -100;">
+  <div class="py-5 text-center text-white shadow-lg" style="position: relative; overflow: hidden;"> <video autoplay="" loop="" muted="" plays-inline="" style="-webkit-font-smoothing: antialiased; -webkit-filter: brightness(.5); filter: brightness(.5); position: absolute; right: 0; top: 0; min-width:100%; z-index: -100;">
       <source src="videos/Sauteed Broccoli And Baby Corn.mp4" type="video/mp4"> </video>
     <div class="container py-5">
       <div class="row">

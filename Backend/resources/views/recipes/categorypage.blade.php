@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-md-12">
             <ul class="breadcrumb">
-              <li class="breadcrumb-item"> <a href="/">Home</a> </li>
+              <li class="breadcrumb-item"> <a href="/home">Home</a> </li>
               <li class="breadcrumb-item"> <a href="/recipes/">Recipes</a> </li>
               <li class="breadcrumb-item"> <a href="/recipes/categories/">Categories</a> </li>
               <li class="breadcrumb-item active">{{ $category }}</li>

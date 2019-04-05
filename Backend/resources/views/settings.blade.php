@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<body style="background: url(/img/background-board-chillies-1435895.jpg);margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >
 <!-- Forms -->
-<div class="container">
+<div class="container mt-4">
 	<div class="row justify-content-center">
 		<div class="col-md-8">
-			<div class="card">
+			<div class="card mb-4">
 				<div class="card-header">Profile Picture</div>
 
 				<div class="card-body">
@@ -67,7 +68,7 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-8">
-			<div class="card">
+			<div class="card mb-4">
 				<div class="card-header">Change password</div>
 
 				<div class="card-body">
@@ -136,7 +137,7 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-8">
-			<div class="card">
+			<div class="card mb-4">
 				<div class="card-header">Personal Information</div>
 
 				<div class="card-body">
@@ -194,4 +195,5 @@
 		</div>
 	</div>
 </div>
+</body>
 @endsection

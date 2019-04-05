@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')	
-<div class="container" style="margin-top: 50px">
-		<div class="card-group mb-4">
+<body style="background: url(/img/background-board-chillies-1435895.jpg);margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >
+<div class="container mt-4">
+	<div class="card-group mb-4">
 			@foreach($recipes as $recipe)
 			<a href="/recipes/{{$recipe->id}}" class="card" style="max-width: 369px;color: inherit; text-decoration: inherit;z-index: 1;">
 				<img class="card-img-top" width="369px" height="247px" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
@@ -18,4 +19,5 @@
 			@endforeach
 		</div></a>
 	</div>
+	</body>
 @endsection

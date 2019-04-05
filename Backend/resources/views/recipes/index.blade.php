@@ -1,11 +1,22 @@
 @extends('layouts.app')
 
 @section('content')	
-	 <div class="container">
-
+<body style="background: url(/img/background-board-chillies-1435895.jpg);margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >
+	 <div class="border rounded-0 bg-light shadow container my-4">
+	 <div class="py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"> <a href="/home">Home</a> </li>
+              <li class="breadcrumb-item active">Recipes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 <!-- Page Heading -->
-      <h1 class="my-4">All
-        <small>Recipes</small>
+      <h1 class="my-3">All Recipes
       </h1>
 
       <!-- Recipe -->
@@ -28,6 +39,9 @@
       </div>
 	  @endforeach
       <!-- /.row -->
+	  @if($recipes->count() >= 15)
       <hr>
-	  <div class="row justify-content-center mt-3"> {{ $recipes->links() }} </div> 
+	  <div class="row justify-content-center mt-3"> {{ $recipes->links() }} </div>
+	  @endif
+	  </body>
 @endsection
