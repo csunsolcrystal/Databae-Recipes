@@ -22,7 +22,7 @@
 					</a>
 				</li>
 			</ul>
-			<form class="typeahead ml-auto mr-auto" role="search">
+			<form class="typeahead ml-auto mr-auto" action="{{ url('search') }}" role="search">
 				{{ csrf_field() }}
 				<div class="btn-group">
 					<div class="u-posRelative">
