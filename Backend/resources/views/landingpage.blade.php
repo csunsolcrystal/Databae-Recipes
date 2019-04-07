@@ -17,18 +17,18 @@
 				<div class="col-lg-8 col-md-10 mx-auto">
 					<h1 class="mb-4 display-3">Databae Recipes</h1>
 					<p class="lead mb-5">Find and share recipes with others who have different levels of cooking experience.&nbsp;</p>
-					<a href="/home" class="btn btn-lg btn-primary mx-1">Take me there!</a>
+					<a href="/home" class="btn btn-lg btn-primary mx-1">Browse Recipes</a>
 					<a href="/register" class="btn btn-lg btn-primary mx-1">Sign Up</a>
 				</div>
 				<div class="col-lg-8 col-md-10 mx-auto">
-					<form class="typeahead ml-auto mr-auto" role="search">
+					<form class="typeahead ml-auto mr-auto" action="{{ url('search') }}" role="search">
 						{{ csrf_field() }}
 						<div class="btn-group">
 							<div class="u-posRelative">
 								<input class="form-control search-input" name="q" type="search" autocomplete="off" placeholder="Search recipes..." aria-label="Search" style="width: 500px">
 							</div>
 							<div class="Typeahead-menu"></div>
-							<button class="btn btn-default" type="submit">
+							<button class="btn btn-default border" style="background-color:white" type="submit">
 								<img src="/img/search_icon.png" alt="Smiley face" height="20px" width="20px">
 							</button>
 						</div>
