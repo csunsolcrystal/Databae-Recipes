@@ -38,5 +38,6 @@ Auth::routes();
 
 Route::get('find', 'SearchController@find');
 Route::get('search','HomeController@getSearch');
+Route::get('search', 'PagesController@getSearch')
 
 

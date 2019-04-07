@@ -29,6 +29,18 @@ usort($newrecipes,function(Recipe $recipe, Recipe $recipe2){
       $recipes = $newrecipes;
 return view('welcome', compact('recipes'));
 	}
+	
+		public function getSearch(Request $request)
+    {
+    	if($request->has('q')){
+    		$recipes = Recipe::search($request->get('q'))->get();	
+    	}else{
+    		$recipes = Recipe::paginate(15)->get();
+    	}
+
+
+    	return view('recipes.index', compact('recipes'));
+    }
 
 public function landing() {
 	return view('landingpage');
