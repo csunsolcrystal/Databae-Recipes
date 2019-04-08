@@ -33,12 +33,12 @@ jQuery(document).ready(function($) {
                         '<div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
                     ],
                     header: [
-                        '<div class="list-group search-results-dropdown">'
+                        '<div class="is-open">'
                     ],
                     suggestion: function (data) {
     if ( data.ratings[0] === undefined ) data.ratings[0] = 0;
 
-	 return  '<a href="/recipes/' + data.id + '" class="list-group-item"><div class="ProfileCard u-cf">' +
+	 return  '<a href="/recipes/' + data.id + '" style="text-decoration: none;"><div class="ProfileCard u-cf Typeahead-suggestion Typeahead-selectable">' +
         '<img class="ProfileCard-avatar" src="/storage/recipes/'+data.picture+'">' +
 
         '<div class="ProfileCard-details">' +
@@ -52,7 +52,8 @@ jQuery(document).ready(function($) {
 	  '<div class="ProfileCard-stat"><span class="ProfileCard-stat-label">Ratings:</span>'+data.ratings[0].total_ratings+'</div>' +
 	'</div>' +
 	'</div>' +
-      '</a>';              
+      '</a>' +
+	  '</div>';
 		}
 		
                 }

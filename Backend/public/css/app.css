@@ -4942,12 +4942,14 @@ input[type=submit].btn-block {
 .card-img {
 	width: 100%;
 	border-radius: calc(.25rem - 1px)
+	object-fit: fill;
 }
 
 .card-img-top {
 	width: 100%;
 	border-top-left-radius: calc(.25rem - 1px);
 	border-top-right-radius: calc(.25rem - 1px)
+	object-fit: fill;
 }
 
 .card-img-bottom {
@@ -9833,4 +9835,9 @@ a.text-dark:hover {
 .slideIn {
   -webkit-animation-name: slideIn;
   animation-name: slideIn;
+}
+#video1 {
+  width: auto;
+   height: 679px;
+  object-fit: fill;
 }

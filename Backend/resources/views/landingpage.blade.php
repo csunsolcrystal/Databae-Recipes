@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<div class="py-5 text-center text-white shadow-lg" style="position: relative; overflow: hidden;"> <video autoplay="" loop="" muted="" plays-inline="" style="-webkit-font-smoothing: antialiased; -webkit-filter: brightness(.5); filter: brightness(.5); position: absolute; right: 0; top: 0; min-width:100%; z-index: -100;">
+	<div class="py-5 text-center text-white shadow-lg" style="position: relative;"> <video id="video1" autoplay="" loop="" muted="" plays-inline="" style="-webkit-font-smoothing: antialiased; -webkit-filter: brightness(.5); filter: brightness(.5); position: absolute; right: 0; top: 0; min-width:100%; z-index: -100;">
 			<source src="videos/Sauteed Broccoli And Baby Corn.mp4" type="video/mp4"> </video>
 		<div class="container py-5">
 			<div class="row">
@@ -24,13 +24,12 @@
 					<form class="typeahead ml-auto mr-auto" action="{{ url('search') }}" role="search">
 						{{ csrf_field() }}
 						<div class="btn-group">
-							<div class="u-posRelative">
+							<div class="u-posRelative has-search">
+								<span class="fa fa-search form-control-feedback"></span>
 								<input class="form-control search-input" name="q" type="search" autocomplete="off" placeholder="Search recipes..." aria-label="Search" style="width: 500px">
 							</div>
 							<div class="Typeahead-menu"></div>
-							<button class="btn btn-default border" style="background-color:white" type="submit">
-								<img src="/img/search_icon.png" alt="Smiley face" height="20px" width="20px">
-							</button>
+							<button class="u-hidden" type="submit">blah</button>
 						</div>
 					</form>
 				</div>
