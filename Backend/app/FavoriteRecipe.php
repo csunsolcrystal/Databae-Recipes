@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class FavoriteRecipe extends Model
 {
 
-	use Cachable, Rateable;	
-
+	use Cachable, Rateable;
+	
+	protected $cacheCooldownSeconds = 120;
+	
      /**
      * Don't auto-apply mass assignment protection.
      *

@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Reply extends Model
 {
 	
-	use Cachable, Rateable;	
+	use Cachable, Rateable;
+	
+	protected $cacheCooldownSeconds = 120;
 
      /**
      * Don't auto-apply mass assignment protection.

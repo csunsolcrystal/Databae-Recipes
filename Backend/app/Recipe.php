@@ -12,6 +12,8 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 class Recipe extends Model
 {
 	use Cachable, Rateable, SearchableTrait;
+	
+	protected $cacheCooldownSeconds = 120;
 
      protected $searchable = [
         'columns' => [

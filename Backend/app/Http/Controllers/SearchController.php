@@ -17,7 +17,7 @@ class SearchController extends Controller
 	->groupBy('ratings.rated_id')
 	->selectRaw('sum(ratings.rated_amount) as total_ratings, ratings.rated_id')
 	->pluck('total_ratings', 'ratings.rated_id');
-	}])->get();
+	}])->disableCache()->get();
 
     }
 
