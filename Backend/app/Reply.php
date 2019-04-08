@@ -2,12 +2,13 @@
 
 namespace App;
 
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Model;
 
 class Reply extends Model
 {
-
-	use Rateable;	
+	
+	use Cachable, Rateable;	
 
      /**
      * Don't auto-apply mass assignment protection.

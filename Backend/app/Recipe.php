@@ -6,11 +6,12 @@ use App\Gallery;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Recipe extends Model
 {
-	use Rateable, SearchableTrait;
+	use Cachable, Rateable, SearchableTrait;
 
      protected $searchable = [
         'columns' => [

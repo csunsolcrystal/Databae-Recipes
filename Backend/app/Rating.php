@@ -2,10 +2,12 @@
 
 namespace App;
 
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Model;
 
 class Rating extends Model
 {
+	use Cachable;
     /**
      * Don't auto-apply mass assignment protection.
      *
