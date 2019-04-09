@@ -90,6 +90,9 @@ class RatingController extends Controller
 	    'rated_type' => get_class($recipe)
          ]);
 
+		$recipe->averageRating = $recipe->getRating();
+		$recipe->save();
+		
         return redirect($recipe->path());
         //return $recipe->rating();
     }

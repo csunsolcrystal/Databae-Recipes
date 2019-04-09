@@ -115,4 +115,15 @@ class Recipe extends Model
     {
         return Gallery::where('recipe_id', $this->id)->disableCache()->count();
     }
+	
+	public function updateRatings() {
+		$recipes = $this->latest()->get();
+		foreach($recipes as $recipe) {
+			if($recipe->hasRatings() && $recipe->averageRating == null) {
+				$recipe->averageRating = $recipe->getRating();
+				$recipe->save();
+				echo("Updated recipe ratings!");
+			}
+		}
+	}
 }
