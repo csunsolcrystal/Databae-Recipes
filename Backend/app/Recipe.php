@@ -103,7 +103,7 @@ class Recipe extends Model
     }
 
 	public function galleryExists() {
-		return !! Gallery::where('recipe_id', $this->id)->count();
+		return !! Gallery::where('recipe_id', $this->id)->disableCache()->count();
 	}
 	
 	 /**
@@ -113,6 +113,6 @@ class Recipe extends Model
      */
     public function getGalleryCountAttribute()
     {
-        return Gallery::where('recipe_id', $this->id)->count();
+        return Gallery::where('recipe_id', $this->id)->disableCache()->count();
     }
 }

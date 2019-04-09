@@ -21,8 +21,7 @@
 					<a href="/register" class="btn btn-lg btn-primary mx-1">Sign Up</a>
 				</div>
 				<div class="col-lg-8 col-md-10 mx-auto">
-					<form class="typeahead ml-auto mr-auto" action="{{ url('search') }}" role="search">
-						{{ csrf_field() }}
+					<form method = "GET" class="typeahead ml-auto mr-auto" action="{{ url('search') }}" role="search">
 						<div class="btn-group">
 							<div class="u-posRelative has-search">
 								<span class="fa fa-search form-control-feedback"></span>

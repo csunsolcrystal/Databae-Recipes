@@ -33,9 +33,9 @@ return view('welcome', compact('recipes'));
 		public function getSearch(Request $request)
     {
     	if($request->has('q')){
-    		$recipes = Recipe::search($request->get('q'))->get();	
+    		$recipes = Recipe::search($request->get('q'))->disableCache()->get();	
     	}else{
-    		$recipes = Recipe::paginate(15)->get();
+    		$recipes = Recipe::paginate(15)->disableCache()->get();
     	}
 
 

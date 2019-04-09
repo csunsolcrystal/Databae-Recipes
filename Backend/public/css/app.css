@@ -6396,6 +6396,7 @@ button.close {
 	backface-visibility: hidden;
 	-webkit-perspective: 1000px;
 	perspective: 1000px
+	object-fit: fill;
 }
 
 .carousel-item-next,
@@ -6406,6 +6407,7 @@ button.close {
 	transition: -webkit-transform .6s ease;
 	transition: transform .6s ease;
 	transition: transform .6s ease, -webkit-transform .6s ease
+	object-fit: fill;
 }
 
 @media screen and (prefers-reduced-motion:reduce) {

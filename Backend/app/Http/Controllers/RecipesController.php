@@ -252,7 +252,7 @@ class RecipesController extends Controller
     protected function getRecipes(RecipeFilters $filters)
     {
         $recipes = Recipe::latest()->filter($filters);
-          return $recipes->get();
+          return $recipes->withCacheCooldownSeconds()->get();
     }
     /**
      * Show the form for editing the specified resource.
