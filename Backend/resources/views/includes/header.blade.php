@@ -25,13 +25,12 @@
 			<form class="typeahead ml-auto mr-auto" action="{{ url('search') }}" role="search">
 				{{ csrf_field() }}
 				<div class="btn-group">
-					<div class="u-posRelative">
+					<div class="u-posRelative has-search">
+					<span class="fa fa-search form-control-feedback"></span>
 					<input class="form-control search-input" name="q" type="search" autocomplete="off" placeholder="Search recipes..." aria-label="Search" style="width: 500px">
 					</div>
 					<div class="Typeahead-menu"></div>
-					<button class="btn btn-default" type="submit">
-						<img src="/img/search_icon.png" alt="Smiley face" height="20px" width="20px">
-					</button>
+					<button class ="u-hidden" type="submit">blah</button>
 				</div>
 			</form>		
 		</div>
