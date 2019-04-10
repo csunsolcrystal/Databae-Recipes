@@ -30,56 +30,45 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <h5 class="text-center border rounded-0 border-light shadow-lg">Top Breakfast</h5>
-          </div>
-          <div class="col-md-4">
-            <h4 class="text-center border rounded-0 border-light shadow-lg">Top Lunch</h4>
-          </div>
-          <div class="col-md-4">
-            <h4 class="text-center border rounded-0 border-light shadow-lg">Top Dinner</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="py-3">
-      <div class="container">
-        <div class="row">
+            <h5 class="text-center border rounded-0 border-light shadow-lg mb-5">Top Breakfast</h5>
 			@forEach($topBreakfasts as $topBreakfast)
-          <div class="col-md-4">
             <div class="card"> <img class="card-img-top" src="/storage/recipes/{{ $topBreakfast->picture }}" alt="Card image cap">
               <div class="card-body">
                 <h4 class="card-title">{{ $topBreakfast->title }}</h4>
                 <p class="card-text">{{ $topBreakfast->description }}</p> <a href="{{ $topBreakfast->path() }}" class="btn btn-primary">Read recipe</a>
               </div>
             </div>
-          </div>
-		  @php break; @endphp
+			@php break; @endphp
 			@endforeach
-		   @forEach($topLunches as $topLunch)
+          </div>
           <div class="col-md-4">
+            <h4 class="text-center border rounded-0 border-light shadow-lg mb-5">Top Lunch</h4>
+			@forEach($topLunches as $topLunch)
             <div class="card"> <img class="card-img-top" src="/storage/recipes/{{ $topLunch->picture }}" alt="Card image cap">
               <div class="card-body">
                 <h4 class="card-title">{{ $topLunch->title }}</h4>
                 <p class="card-text">{{ $topLunch->description }}</p> <a href="{{ $topLunch->path() }}" class="btn btn-primary">Read recipe</a>
               </div>
             </div>
-			</div>
 			@php break; @endphp
 			@endforeach
-			@forEach($topDinners as $topDinner)
+          </div>
           <div class="col-md-4">
+            <h4 class="text-center border rounded-0 border-light shadow-lg mb-5">Top Dinner</h4>
+			  @forEach($topDinners as $topDinner)
             <div class="card"> <img class="card-img-top" src="/storage/recipes/{{ $topDinner->picture }}" alt="Card image cap">
               <div class="card-body">
                 <h4 class="card-title">{{ $topDinner->title }}</h4>
                 <p class="card-text">{{ $topDinner->description }}</p> <a href="{{ $topDinner->path() }}" class="btn btn-primary">Read recipe</a>
               </div>
             </div>
-          </div>
 		  @php break; @endphp
 			@endforeach
+          </div>
         </div>
       </div>
     </div>
+    <div class="py-3">
     <div class="py-5">
       <div class="container">
         <div class="row">
