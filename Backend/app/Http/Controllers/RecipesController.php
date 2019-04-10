@@ -43,6 +43,7 @@ class RecipesController extends Controller
     public function categoryshow($category)
     {
 	   $recipes = Recipe::where('category', $category)->paginate(6);
+	   $getrecipesweek = Recipe::where('category', $category)->get();
 	   $banner ="";
 	   $text1 = "";
 	   $text2= "";
@@ -51,14 +52,14 @@ class RecipesController extends Controller
 	   
 	  
 	   // recipes created on or after monday but before the next monday is picked
-	   foreach($recipes as $recipe) {
-		   if((strtotime($recipe->created_at) >= strtotime("monday this week")) && strtotime($recipe->created_at) <= strtotime("monday next week"))
-		$recipeweek[] = $recipe;
+	   foreach($getrecipesweek as $therecipe) {
+		   if((strtotime($therecipe->created_at) >= strtotime("monday this week")) && strtotime($therecipe->created_at) <= strtotime("monday next week"))
+		$recipeweek[] = $therecipe;
       }
 	  
 	  // if there isnt any, then just grab random one
 	if (empty($recipeweek))
-	$recipeweek[] = $recipes;
+	$recipeweek[] = $getrecipesweek;
 	
 	   // Using the new array, sort the rating by descending values by comparing
 	usort($recipeweek,function(Recipe $recipe, Recipe $recipe2){
@@ -140,7 +141,69 @@ class RecipesController extends Controller
 
     public function categories()
     {
-        return view('recipes.categories', compact('recipes'));
+		$breakfastRecipes = Recipe::where('category', 'Breakfast')->get();
+		$lunchRecipes = Recipe::where('category', 'Lunch')->get();
+		$dessertRecipes = Recipe::where('category', 'Dessert')->get();
+		$dinnerRecipes = Recipe::where('category', 'Dinner')->get();
+		$drinksRecipes = Recipe::where('category', 'Drinks')->get();
+		$snacksRecipes = Recipe::where('category', 'Snacks')->get();
+		
+	  foreach($breakfastRecipes as $therecipe) {
+		$topBreakfasts[] = $therecipe;
+      }
+	  foreach($lunchRecipes as $therecipe) {
+		$topLunches[] = $therecipe;
+      }
+	  foreach($dessertRecipes as $therecipe) {
+		$topDesserts[] = $therecipe;
+      }
+	  foreach($dinnerRecipes as $therecipe) {
+		$topDinners[] = $therecipe;
+      }
+	  foreach($drinksRecipes as $therecipe) {
+		$topDrinks[] = $therecipe;
+      }
+	  foreach($snacksRecipes as $therecipe) {
+		$topSnacks[] = $therecipe;
+      }
+		 
+	  // if there isnt any, then just grab random one
+	if (empty($breakfastRecipes))
+	$topBreakfasts[] = $breakfastRecipes;
+	
+	if (empty($lunchRecipes))
+	$topLunches[] = $lunchRecipes;
+	
+	if (empty($dessertRecipes))
+	$topDesserts[] = $dessertRecipes;
+	
+	if (empty($dinnerRecipes))
+	$topDinners[] = $dinnerRecipes;
+	
+	if (empty($snacksRecipes))
+	$topSnacks[] = $snacksRecipes;
+	
+	if (empty($drinksRecipes))
+	$topDrinks[] = $drinksRecipes;
+	
+	   // Using the new array, sort the rating by descending values by comparing
+	usort($topBreakfasts,function(Recipe $recipe, Recipe $recipe2){
+    return $recipe->getRating() < $recipe2->getRating();
+	});
+	usort($topLunches,function(Recipe $recipe, Recipe $recipe2){
+    return $recipe->getRating() < $recipe2->getRating();
+	});
+	usort($topDesserts,function(Recipe $recipe, Recipe $recipe2){
+    return $recipe->getRating() < $recipe2->getRating();
+	});
+	usort($topDinners,function(Recipe $recipe, Recipe $recipe2){
+    return $recipe->getRating() < $recipe2->getRating();
+	});
+        return view('recipes.categories', [
+            'topBreakfast' => $topBreakfasts[0],
+			'topLunch' => $topLunches[0],
+			'topDinner' => $topDinners[0],
+			]);
     }
 
 
@@ -252,7 +315,7 @@ class RecipesController extends Controller
     protected function getRecipes(RecipeFilters $filters)
     {
         $recipes = Recipe::latest()->filter($filters);
-          return $recipes->withCacheCooldownSeconds()->get();
+          return $recipes->paginate(15);
     }
     /**
      * Show the form for editing the specified resource.

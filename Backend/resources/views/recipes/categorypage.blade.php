@@ -86,5 +86,7 @@
 			@endforeach
 		</div></a>
 	</div>
+	<hr>
+	  <div class="row justify-content-center mt-3"> {{ $recipes->links() }} </div>
   </body>
 @endsection

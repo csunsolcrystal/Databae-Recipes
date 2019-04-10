@@ -49,9 +49,9 @@ jQuery(document).ready(function($) {
         '</div>' +
 
         '<div class="ProfileCard-stats">' +
-          '<div class="ProfileCard-stat"><span class="ProfileCard-stat-label"><span class="fas fa-users"></span>&nbsp;Views:</span>'+data.views+'</div>' +
-		  '<div class="ProfileCard-stat"><span class="ProfileCard-stat-label"><span class="fa fa-star checked"></span>&nbsp;Overall rating:</span>'+data.averageRating+'</div>' +
-		  '<div class="ProfileCard-stat"><span class="ProfileCard-stat-label">Ratings:</span>'+data.ratings[0].total_ratings+'</div>' +
+          '<div class="ProfileCard-stat"><span class="ProfileCard-stat-label"><span class="fas fa-users"></span>&nbsp;Views:&nbsp;</span>'+data.views+'</div>' +
+		  '<div class="ProfileCard-stat"><span class="ProfileCard-stat-label"><span class="fa fa-star checked"></span>&nbsp;Overall rating:&nbsp;</span>'+data.averageRating+'</div>' +
+		  '<div class="ProfileCard-stat"><span class="ProfileCard-stat-label">Ratings:&nbsp;</span>'+data.ratings[0].total_ratings+'</div>' +
 	'</div>' +
 	'</div>' +
       '</a>' +

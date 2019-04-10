@@ -122,8 +122,8 @@ class Recipe extends Model
 			if($recipe->hasRatings() && $recipe->averageRating == null) {
 				$recipe->averageRating = $recipe->getRating();
 				$recipe->save();
-				echo("Updated recipe ratings!");
 			}
 		}
+		echo("Updated recipe ratings!");
 	}
 }

@@ -11,7 +11,7 @@ class PagesController extends Controller
 {
 public function home() {
 // Collect all the recipes ordered by views then sort them into an 'array'
-$recipes = Recipe::oldest()->orderBy('views', 'desc')->get();
+$recipes = Recipe::oldest()->orderBy('views', 'desc')->disableCache()->get();
 
 //if our recipes are completely empty return empty recipes, otherwise, continue
 	if($recipes->isEmpty())
@@ -33,9 +33,9 @@ return view('welcome', compact('recipes'));
 		public function getSearch(Request $request)
     {
     	if($request->has('q')){
-    		$recipes = Recipe::search($request->get('q'))->disableCache()->get();	
+    		$recipes = Recipe::search($request->get('q'))->disableCache()->paginate(15);	
     	}else{
-    		$recipes = Recipe::paginate(15)->disableCache()->get();
+    		$recipes = Recipe::disableCache()->paginate(15);
     	}
 
 
