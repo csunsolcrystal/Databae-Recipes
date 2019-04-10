@@ -226,7 +226,7 @@ class RecipesController extends Controller
 	});
         return view('recipes.categories', [
             'topBreakfasts' => $topBreakfasts,
-			'topLunchs' => $topLunches,
+			'topLunches' => $topLunches,
 			'topDinners' => $topDinners,
 			'topSnacks' => $topSnacks,
 			'topDrinks' => $topDrinks,

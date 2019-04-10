@@ -55,7 +55,7 @@
           </div>
 		  @php break; @endphp
 			@endforeach
-		   @forEach($topLunchs as $topLunch)
+		   @forEach($topLunches as $topLunch)
           <div class="col-md-4">
             <div class="card"> <img class="card-img-top" src="/storage/recipes/{{ $topLunch->picture }}" alt="Card image cap">
               <div class="card-body">
