@@ -49,7 +49,7 @@ class RecipesController extends Controller
 	   $text2= "";
 	   $title = "";
 	   $background = "";
-	   
+	   $recipeweek = [];
 	  
 	   // recipes created on or after monday but before the next monday is picked
 	   foreach($getrecipesweek as $therecipe) {
@@ -57,14 +57,6 @@ class RecipesController extends Controller
 		$recipeweek[] = $therecipe;
       }
 	  
-	  // if there isnt any, then just grab random one
-	if (empty($recipeweek))
-	$recipeweek[] = $getrecipesweek;
-	
-	   // Using the new array, sort the rating by descending values by comparing
-	usort($recipeweek,function(Recipe $recipe, Recipe $recipe2){
-    return $recipe->getRating() < $recipe2->getRating();
-	});
 	// this could of been done by arrays but got lazy will fix later
 	
 	   if($category == "breakfast") {
@@ -111,6 +103,26 @@ class RecipesController extends Controller
 		   $text2 = "Follow to get the latest drinks recipes, articles and more!";
 		   $background = "/img/alcohol-bar-beer-1283219.jpg";
 	   }
+	   
+	   // if there isnt any, then just grab random one
+	if (empty($recipeweek)) {
+	$recipeweek[] = $getrecipesweek;
+	return view('recipes.categorypage', [
+            'recipes' => $recipes,
+			'banner' => $banner,
+			'text1' => $text1,
+			'text2' => $text2,
+			'background' => $background,
+			'title' => ucfirst($title),
+			'category' => ucfirst($category),
+        ]);
+	}
+	
+	   // Using the new array, sort the rating by descending values by comparing
+	usort($recipeweek,function(Recipe $recipe, Recipe $recipe2){
+    return $recipe->getRating() < $recipe2->getRating();
+	});
+	
        return view('recipes.categorypage', [
             'recipes' => $recipes,
 			'banner' => $banner,
@@ -147,6 +159,13 @@ class RecipesController extends Controller
 		$dinnerRecipes = Recipe::where('category', 'Dinner')->get();
 		$drinksRecipes = Recipe::where('category', 'Drinks')->get();
 		$snacksRecipes = Recipe::where('category', 'Snacks')->get();
+		$topBreakfasts = [];
+		$topLunches = [];
+		$topDinners = [];
+		$topDesserts = [];
+		$topDrinks = [];
+		$topSnacks = [];
+		
 		
 	  foreach($breakfastRecipes as $therecipe) {
 		$topBreakfasts[] = $therecipe;
@@ -199,10 +218,19 @@ class RecipesController extends Controller
 	usort($topDinners,function(Recipe $recipe, Recipe $recipe2){
     return $recipe->getRating() < $recipe2->getRating();
 	});
+	usort($topSnacks,function(Recipe $recipe, Recipe $recipe2){
+    return $recipe->getRating() < $recipe2->getRating();
+	});
+	usort($topDrinks,function(Recipe $recipe, Recipe $recipe2){
+    return $recipe->getRating() < $recipe2->getRating();
+	});
         return view('recipes.categories', [
-            'topBreakfast' => $topBreakfasts[0],
-			'topLunch' => $topLunches[0],
-			'topDinner' => $topDinners[0],
+            'topBreakfasts' => $topBreakfasts,
+			'topLunchs' => $topLunches,
+			'topDinners' => $topDinners,
+			'topSnacks' => $topSnacks,
+			'topDrinks' => $topDrinks,
+			'topDesserts' => $topDesserts,
 			]);
     }
 

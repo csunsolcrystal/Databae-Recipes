@@ -44,6 +44,7 @@
     <div class="py-3">
       <div class="container">
         <div class="row">
+			@forEach($topBreakfasts as $topBreakfast)
           <div class="col-md-4">
             <div class="card"> <img class="card-img-top" src="/storage/recipes/{{ $topBreakfast->picture }}" alt="Card image cap">
               <div class="card-body">
@@ -52,6 +53,9 @@
               </div>
             </div>
           </div>
+		  @php break; @endphp
+			@endforeach
+		   @forEach($topLunchs as $topLunch)
           <div class="col-md-4">
             <div class="card"> <img class="card-img-top" src="/storage/recipes/{{ $topLunch->picture }}" alt="Card image cap">
               <div class="card-body">
@@ -60,6 +64,9 @@
               </div>
             </div>
 			</div>
+			@php break; @endphp
+			@endforeach
+			@forEach($topDinners as $topDinner)
           <div class="col-md-4">
             <div class="card"> <img class="card-img-top" src="/storage/recipes/{{ $topDinner->picture }}" alt="Card image cap">
               <div class="card-body">
@@ -68,6 +75,8 @@
               </div>
             </div>
           </div>
+		  @php break; @endphp
+			@endforeach
         </div>
       </div>
     </div>
