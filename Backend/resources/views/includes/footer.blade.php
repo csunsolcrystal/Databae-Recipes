@@ -20,64 +20,65 @@
 -->
 
 <!-- Footer -->
-<footer class="page-footer font-small indigo">
+<div class="border rounded-0 bg-light shadow container my-4">
+	<footer class="page-footer font-small indigo">
 
-	<!-- Footer Links -->
-	<div class="container">
+		<!-- Footer Links -->
+		<div class="container">
 
-		<!-- Grid row-->
-		<div class="row text-center d-flex justify-content-center pt-5 mb-3">
+			<!-- Grid row-->
+			<div class="row text-center d-flex justify-content-center pt-5 mb-3">
 
-			<!-- Grid column -->
-			<div class="col-md-2 mb-3">
-				<h6 class="text-uppercase font-weight-bold">
-					<a href="/contact">About us</a>
-				</h6>
+				<!-- Grid column -->
+				<div class="col-md-2 mb-3">
+					<h6 class="text-uppercase font-weight-bold">
+						<a href="/contact">About us</a>
+					</h6>
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div class="col-md-2 mb-3">
+					<h6 class="text-uppercase font-weight-bold">
+						<a href="/contact">Site Map</a>
+					</h6>
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div class="col-md-2 mb-3">
+					<h6 class="text-uppercase font-weight-bold">
+						<a href="/contact">Other Links</a>
+					</h6>
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div class="col-md-2 mb-3">
+					<h6 class="text-uppercase font-weight-bold">
+						<a href="/contact">Support</a>
+					</h6>
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div class="col-md-2 mb-3">
+					<h6 class="text-uppercase font-weight-bold">
+						<a href="/contact">Contact</a>
+					</h6>
+				</div>
+				<!-- Grid column -->
+
 			</div>
-			<!-- Grid column -->
-
-			<!-- Grid column -->
-			<div class="col-md-2 mb-3">
-				<h6 class="text-uppercase font-weight-bold">
-					<a href="/contact">Site Map</a>
-				</h6>
-			</div>
-			<!-- Grid column -->
-
-			<!-- Grid column -->
-			<div class="col-md-2 mb-3">
-				<h6 class="text-uppercase font-weight-bold">
-					<a href="/contact">Other Links</a>
-				</h6>
-			</div>
-			<!-- Grid column -->
-
-			<!-- Grid column -->
-			<div class="col-md-2 mb-3">
-				<h6 class="text-uppercase font-weight-bold">
-					<a href="/contact">Support</a>
-				</h6>
-			</div>
-			<!-- Grid column -->
-
-			<!-- Grid column -->
-			<div class="col-md-2 mb-3">
-				<h6 class="text-uppercase font-weight-bold">
-					<a href="/contact">Contact</a>
-				</h6>
-			</div>
-			<!-- Grid column -->
-
+			<!-- Grid row-->
 		</div>
-		<!-- Grid row-->
-	</div>
-	<!-- Footer Links -->
+		<!-- Footer Links -->
 
-	<!-- Copyright -->
-	<div class="footer-copyright text-center py-3">© 2019 Copyright:
-		<a href="databaerecipes.com">databaerecipes.com</a>
-	</div>
-	<!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">© 2019 Copyright:
+			<a href="databaerecipes.com">databaerecipes.com</a>
+		</div>
+		<!-- Copyright -->
+	</footer>
+	<!-- Footer -->
+</div>
