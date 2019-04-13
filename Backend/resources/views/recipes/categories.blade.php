@@ -38,7 +38,6 @@
                 <p class="card-text">{{ $topBreakfast->description }}</p> <a href="{{ $topBreakfast->path() }}" class="btn btn-primary">Read recipe</a>
               </div>
             </div>
-			@php break; @endphp
 			@endforeach
           </div>
           <div class="col-md-4">
@@ -50,7 +49,6 @@
                 <p class="card-text">{{ $topLunch->description }}</p> <a href="{{ $topLunch->path() }}" class="btn btn-primary">Read recipe</a>
               </div>
             </div>
-			@php break; @endphp
 			@endforeach
           </div>
           <div class="col-md-4">
@@ -62,7 +60,6 @@
                 <p class="card-text">{{ $topDinner->description }}</p> <a href="{{ $topDinner->path() }}" class="btn btn-primary">Read recipe</a>
               </div>
             </div>
-		  @php break; @endphp
 			@endforeach
           </div>
         </div>

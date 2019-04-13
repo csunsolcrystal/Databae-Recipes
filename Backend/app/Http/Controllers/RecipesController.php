@@ -225,12 +225,12 @@ class RecipesController extends Controller
     return $recipe->getRating() < $recipe2->getRating();
 	});
         return view('recipes.categories', [
-            'topBreakfasts' => $topBreakfasts,
-			'topLunches' => $topLunches,
-			'topDinners' => $topDinners,
-			'topSnacks' => $topSnacks,
-			'topDrinks' => $topDrinks,
-			'topDesserts' => $topDesserts,
+            'topBreakfasts' => array_slice($topBreakfasts, 0, 1),
+			'topLunches' => array_slice($topLunches, 0, 1),
+			'topDinners' => array_slice($topDinners, 0, 1),
+			'topSnacks' => array_slice($topSnacks, 0, 1),
+			'topDrinks' => array_slice($topDrinks, 0, 1),
+			'topDesserts' => array_slice($topDesserts, 0, 1),
 			]);
     }
 
@@ -376,6 +376,11 @@ class RecipesController extends Controller
      */
     public function destroy(Recipe $recipe)
     {
-        //
+        $this->authorize('update', $recipe);
+        $recipe->delete();
+        if (request()->wantsJson()) {
+            return response([], 204);
+        }
+        return redirect('/recipes');
     }
 }

@@ -70,8 +70,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="row" style="text-align: center;">
-                <p class="mb-3">There is no recipes for this week!</p>
+            <div class="col-lg-12 col-md-12 col-6 list-unstyled d-flex justify-content-center">
+                <h3 class="mb-3 mt-3">There is no recipes for this week!</h3>
             </div>
           </div>
         </div>
