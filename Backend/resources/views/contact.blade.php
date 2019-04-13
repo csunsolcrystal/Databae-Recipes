@@ -10,7 +10,7 @@
 			<h2>Phone</h2>
 			<p>555-555-5555</p>
 		</div>
-		<div class="border rounded-0 bg-light container my-4">
+		<div class="border rounded-0 bg-light container">
 		<div class="col-xs-6 col-lg-4">
 			FAQs
 			<ul>
