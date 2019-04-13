@@ -1,5 +1,4 @@
 @include('includes.head')
-@include('includes.footer')
 <!DOCTYPE html>
 <html>
 
@@ -78,3 +77,4 @@
 </body>
 
 </html>
+@include('includes.footer')
