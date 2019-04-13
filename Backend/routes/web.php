@@ -31,7 +31,7 @@ Route::post('/recipes/{recipe}/replies', 'RepliesController@store');
 Route::post('/recipes/{recipe}/ratings', 'RatingController@store');
 Route::post('/recipes/{recipe}/favorites', 'RatingController@storeFavoriteRecipe');
 Route::post('/replies/{reply}/favorites', 'RatingController@storeFavoriteReply');
-Route::get('/contact', 'PagesController@contact')
+Route::get('/contact', 'PagesController@contact');
 
 Auth::routes(['verify' => true]);
 
