@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<body style="background: url(/img/background-board-chillies-1435895.jpg);margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >
+<!--<body style="background: url(/img/background-board-chillies-1435895.jpg);margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >-->
 <div class="border rounded-0 bg-light shadow container my-4">
 <!-------------------- Image Slideshow -------------------->
 <div class="container mt-4">
