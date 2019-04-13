@@ -6,11 +6,14 @@ use App\Gallery;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Recipe extends Model
 {
-	use Rateable, SearchableTrait;
+	use Cachable, Rateable, SearchableTrait;
+	
+	protected $cacheCooldownSeconds = 120;
 
      protected $searchable = [
         'columns' => [
@@ -100,7 +103,7 @@ class Recipe extends Model
     }
 
 	public function galleryExists() {
-		return !! Gallery::where('recipe_id', $this->id)->count();
+		return !! Gallery::where('recipe_id', $this->id)->disableCache()->count();
 	}
 	
 	 /**
@@ -110,6 +113,17 @@ class Recipe extends Model
      */
     public function getGalleryCountAttribute()
     {
-        return Gallery::where('recipe_id', $this->id)->count();
+        return Gallery::where('recipe_id', $this->id)->disableCache()->count();
     }
+	
+	public function updateRatings() {
+		$recipes = $this->latest()->get();
+		foreach($recipes as $recipe) {
+			if($recipe->hasRatings() && $recipe->averageRating == null) {
+				$recipe->averageRating = $recipe->getRating();
+				$recipe->save();
+			}
+		}
+		echo("Updated recipe ratings!");
+	}
 }

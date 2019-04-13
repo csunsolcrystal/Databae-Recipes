@@ -22,7 +22,7 @@
           <h1>{{ $user->username }}</h1>
           <p class="mb-3 lead">{{ $user->first_name }} {{ $user->last_name }}<br><br>Total amount of rating recipes:<b> {{ $user->totalRatings() }} </b><br><br>Average Ratings:<b> {{ $user->totalAverageRatings() }} out of 5 stars </b></p>
         </div>
-        <div class="col-lg-6"> <img class="img-fluid d-block" width="50%" height="75%" src="/storage/avatars/{{ $user->avatar }}">@if ($user->id != auth()->user()->id)<a class="btn btn-secondary mt-3" href="#">Message</a>@endif
+        <div class="col-lg-6"> <img class="img-fluid d-block" width="50%" height="75%" src="/storage/avatars/{{ $user->avatar }}">@if (auth()->check() && $user->id != auth()->user()->id)<a class="btn btn-secondary mt-3" href="#">Message</a>@endif
 	</div>
       </div>
     </div>

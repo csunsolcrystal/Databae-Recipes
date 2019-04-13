@@ -88,6 +88,20 @@
             <li><a href="#"><i class="fab fa-github lead px-2"></i></a></li>
             <li><a href="#"><i class="fab fa-instagram lead px-2"></i></a></li>
           </ul>
+		   @can ('update', $recipe)
+			<form class="delete" action="{{ $recipe->path() }}" method="POST">
+        {{ method_field('DELETE') }}
+        {{ csrf_field() }}
+        <div class="col-lg-12 col-md-12 col-6 list-unstyled d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-secondary">Delete Recipe</button>
+									</div>
+									</form>
+		<script>
+			$(".delete").on("submit", function(){
+			return confirm("Are you sure?");
+			});
+		</script>
+                            @endcan
         </div>
       </div>
       <div class="row">

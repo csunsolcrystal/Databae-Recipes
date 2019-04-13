@@ -10,27 +10,25 @@
 </head>
 
 <body>
-	<div class="py-5 text-center text-white shadow-lg" style="position: relative; overflow: hidden;"> <video autoplay="" loop="" muted="" plays-inline="" style="-webkit-font-smoothing: antialiased; -webkit-filter: brightness(.5); filter: brightness(.5); position: absolute; right: 0; top: 0; min-width:100%; z-index: -100;">
+	<div class="py-5 text-center text-white shadow-lg" style="position: relative;"> <video id="video1" autoplay="" loop="" muted="" plays-inline="" style="-webkit-font-smoothing: antialiased; -webkit-filter: brightness(.5); filter: brightness(.5); position: absolute; right: 0; top: 0; min-width:100%; z-index: -100;">
 			<source src="videos/Sauteed Broccoli And Baby Corn.mp4" type="video/mp4"> </video>
 		<div class="container py-5">
 			<div class="row">
 				<div class="col-lg-8 col-md-10 mx-auto">
 					<h1 class="mb-4 display-3">Databae Recipes</h1>
 					<p class="lead mb-5">Find and share recipes with others who have different levels of cooking experience.&nbsp;</p>
-					<a href="/home" class="btn btn-lg btn-primary mx-1">Take me there!</a>
+					<a href="/home" class="btn btn-lg btn-primary mx-1">Browse Recipes</a>
 					<a href="/register" class="btn btn-lg btn-primary mx-1">Sign Up</a>
 				</div>
 				<div class="col-lg-8 col-md-10 mx-auto">
-			<form class="typeahead ml-auto mr-auto" action="{{ url('search') }}" role="search">
-						{{ csrf_field() }}
+					<form method = "GET" class="typeahead ml-auto mr-auto" action="{{ url('search') }}" role="search">
 						<div class="btn-group">
-							<div class="u-posRelative">
+							<div class="u-posRelative has-search">
+								<span class="fa fa-search form-control-feedback"></span>
 								<input class="form-control search-input" name="q" type="search" autocomplete="off" placeholder="Search recipes..." aria-label="Search" style="width: 500px">
 							</div>
 							<div class="Typeahead-menu"></div>
-							<button class="btn btn-default" type="submit">
-								<img src="/img/search_icon.png" alt="Smiley face" height="20px" width="20px">
-							</button>
+							<button class="u-hidden" type="submit">blah</button>
 						</div>
 					</form>
 				</div>

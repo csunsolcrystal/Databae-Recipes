@@ -2,12 +2,15 @@
 
 namespace App;
 
+use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Model;
 
 class Reply extends Model
 {
-
-	use Rateable;	
+	
+	use Cachable, Rateable;
+	
+	protected $cacheCooldownSeconds = 120;
 
      /**
      * Don't auto-apply mass assignment protection.

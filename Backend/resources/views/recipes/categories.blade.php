@@ -30,47 +30,42 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <h5 class="text-center border rounded-0 border-light shadow-lg">Top Breakfast</h5>
+            <h5 class="text-center border rounded-0 border-light shadow-lg mb-5">Top Breakfast</h5>
+			@forEach($topBreakfasts as $topBreakfast)
+            <div class="card"> <img class="card-img-top" src="/storage/recipes/{{ $topBreakfast->picture }}" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">{{ $topBreakfast->title }}</h4>
+                <p class="card-text">{{ $topBreakfast->description }}</p> <a href="{{ $topBreakfast->path() }}" class="btn btn-primary">Read recipe</a>
+              </div>
+            </div>
+			@endforeach
           </div>
           <div class="col-md-4">
-            <h4 class="text-center border rounded-0 border-light shadow-lg">Top Lunch</h4>
+            <h4 class="text-center border rounded-0 border-light shadow-lg mb-5">Top Lunch</h4>
+			@forEach($topLunches as $topLunch)
+            <div class="card"> <img class="card-img-top" src="/storage/recipes/{{ $topLunch->picture }}" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">{{ $topLunch->title }}</h4>
+                <p class="card-text">{{ $topLunch->description }}</p> <a href="{{ $topLunch->path() }}" class="btn btn-primary">Read recipe</a>
+              </div>
+            </div>
+			@endforeach
           </div>
           <div class="col-md-4">
-            <h4 class="text-center border rounded-0 border-light shadow-lg">Top Dinner</h4>
+            <h4 class="text-center border rounded-0 border-light shadow-lg mb-5">Top Dinner</h4>
+			  @forEach($topDinners as $topDinner)
+            <div class="card"> <img class="card-img-top" src="/storage/recipes/{{ $topDinner->picture }}" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">{{ $topDinner->title }}</h4>
+                <p class="card-text">{{ $topDinner->description }}</p> <a href="{{ $topDinner->path() }}" class="btn btn-primary">Read recipe</a>
+              </div>
+            </div>
+			@endforeach
           </div>
         </div>
       </div>
     </div>
     <div class="py-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card"> <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <a href="#" class="btn btn-primary">Read recipe</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card"> <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <a href="#" class="btn btn-primary">Read recipe</a>
-              </div>
-            </div>
-			</div>
-          <div class="col-md-4">
-            <div class="card"> <img class="card-img-top" src="https://static.pingendo.com/cover-moon.svg" alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> <a href="#" class="btn btn-primary">Read recipe</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="py-5">
       <div class="container">
         <div class="row">

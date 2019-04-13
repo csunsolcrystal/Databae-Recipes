@@ -89,7 +89,12 @@ class RatingController extends Controller
             'rated_id'  => $recipe->id,
 	    'rated_type' => get_class($recipe)
          ]);
-
+		
+		$recipe = Recipe::findOrFail($recipe->id);
+		$recipe->timestamps = false;
+		$recipe->averageRating = $recipe->getRating();
+		$recipe->save();
+		
         return redirect($recipe->path());
         //return $recipe->rating();
     }

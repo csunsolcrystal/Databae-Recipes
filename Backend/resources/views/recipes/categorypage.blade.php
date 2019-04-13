@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-	@if ($recipeweek != '')
+	@if(!empty($recipeweek))
     <div class="py-1 border-bottom">
       <div class="container">
         <div class="row">
@@ -58,8 +58,20 @@
               <div class="col-lg-3 order-2 order-md-1 col-md-4"> <img class="d-block img-fluid" src="/storage/recipes/{{ $recipeweek->picture }}"> </div>
               <div class="flex-column justify-content-center offset-lg-1 align-items-start order-1 order-md-2 col-md-8 d-flex p-3">
                 <h3>{{ $recipeweek->title }}</h3>
-                <p class="mb-3">{{ $recipeweek->description }}</p> <a class="btn btn-primary" href="/recipes/{{$recipeweek->id }}">Read Recipe</a>
+                <p class="mb-3">{{ $recipeweek->description }}</p> <a class="btn btn-primary" href="{{$recipeweek->path() }}">Read Recipe</a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	@else
+	 <div class="py-1 border-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="col-lg-12 col-md-12 col-6 list-unstyled d-flex justify-content-center">
+                <h3 class="mb-3 mt-3">There is no recipes for this week!</h3>
             </div>
           </div>
         </div>
@@ -86,5 +98,7 @@
 			@endforeach
 		</div></a>
 	</div>
+	<hr>
+	  <div class="row justify-content-center mt-3"> {{ $recipes->links() }} </div>
   </body>
 @endsection

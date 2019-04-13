@@ -24,6 +24,7 @@ class CreateRecipesTable extends Migration
 			$table->text('ingredients');
 			$table->string('cookTime');
 			$table->string('prepTime');
+			$table->float('averageRating')->nullable();
 	    $table->text('recipe_steps');
 	    $table->string('picture')->default('default.jpg');
 	    $table->UnsignedInteger('views')->default(0);

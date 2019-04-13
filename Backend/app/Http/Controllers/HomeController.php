@@ -22,9 +22,9 @@ class HomeController extends Controller
 	public function getSearch(Request $request)
     {
     	if($request->has('q')){
-    		$recipes = Recipe::search($request->get('q'))->get();	
+    		$recipes = Recipe::search($request->get('q'))->disableCache()->paginate(15);	
     	}else{
-    		$recipes = Recipe::paginate(15)->get();
+    		$recipes = Recipe::disableCache()->paginate(15);
     	}
 
 

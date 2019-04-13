@@ -39,9 +39,7 @@
       </div>
 	  @endforeach
       <!-- /.row -->
-	  @if($recipes->count() >= 15)
       <hr>
 	  <div class="row justify-content-center mt-3"> {{ $recipes->links() }} </div>
-	  @endif
 	  </body>
 @endsection
