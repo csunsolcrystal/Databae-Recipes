@@ -32,7 +32,7 @@ Route::post('/recipes/{recipe}/ratings', 'RatingController@store');
 Route::post('/recipes/{recipe}/favorites', 'RatingController@storeFavoriteRecipe');
 Route::post('/replies/{reply}/favorites', 'RatingController@storeFavoriteReply');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 //Route::get('home', 'HomeController@index')->name('home');
 
