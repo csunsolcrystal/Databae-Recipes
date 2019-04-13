@@ -5,3 +5,4 @@
 	<h1>Customer Support</h1>
 	<p>Email support@mail.databaerecipes.com for support.</p>
 </div>
+@endsection
