@@ -60,4 +60,7 @@ public function browse() {
 public function user(){
 	return view('user');
 }
+public function contact() {
+	return view('contact');
+}
 }
