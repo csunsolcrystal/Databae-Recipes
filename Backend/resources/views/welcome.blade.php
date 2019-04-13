@@ -4,6 +4,7 @@
 <!--<body style="background: url(/img/background-board-chillies-1435895.jpg);margin: 0;background-position: center;background-repeat: no-repeat;background-size: cover;" >-->
 <div class="border rounded-0 bg-light shadow container my-4">
 <!-------------------- Image Slideshow -------------------->
+@foreach($recipes as $recipe)
 <div class="container mt-4">
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
@@ -13,9 +14,9 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img class="d-block w-100" src="img/burg.jpg" alt="First slide">
+				<img class="d-block w-100" src="/storage/recipes/{{ $recipe->picture }}" alt="{{ $recipe->title }}">
 				<div class="carousel-caption d-none d-md-block">
-					<h1>Spicy Bacon Burgers</h1>
+					<h1><a href="/recipes/{{$recipe->id}}"></a></h1>
 					<p>Something with a little heat!</p>
 				</div>
 			</div>
@@ -44,6 +45,7 @@
 		</a>
 	</div>
 </div>
+@endforeach
 <!-- Bottom Content -->
 @endsection
 
