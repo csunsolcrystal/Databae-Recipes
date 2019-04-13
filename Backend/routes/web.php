@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'PagesController@landing');
-Route::get('home', 'PagesController@home')->name('home')->middleware('verified');
+Route::get('home', 'PagesController@home')->name('home');
 //Route::get('/', 'PagesController@home');
 
 Route::get('settings', 'UserController@profile')->name('settings');
@@ -21,7 +21,7 @@ Route::post('settings', 'UserController@update_profile');
 
 Route::get('/recipes/myrecipes', 'RecipesController@myrecipes')->name('recipes');
 Route::get('/recipes', 'RecipesController@index')->name('recipes');
-Route::get('uploadrecipes', 'RecipesController@create');
+Route::get('uploadrecipes', 'RecipesController@create')->middleware('verified');
 Route::post('uploadrecipes', 'RecipesController@store');
 Route::get('/recipes/categories', 'RecipesController@categories');
 Route::get('/recipes/categories/{category}', 'RecipesController@categoryshow');
