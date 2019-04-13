@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'PagesController@landing');
-Route::get('home', 'PagesController@home')->name('home');
+Route::get('home', 'PagesController@home')->name('home')->middleware('verified');
 //Route::get('/', 'PagesController@home');
 
 Route::get('settings', 'UserController@profile')->name('settings');
