@@ -25,14 +25,14 @@
 			</div>
 		</div>
 		<div class="card-group mb-4">
-			<img class="card-img-top" width="369px" height="247px" src="/img/Tableman2.jpg" alt="Aaron Park">
+			<img class="card-img-top" width="369px" height="247px" src="/img/Aaron.jpg" alt="Aaron Park">
 			<div class="card-body">
 				<h5 class="card-title">Aaron Park</h5>
 				<p class="card-text">He is gay.</p>
 			</div>
 		</div>
 		<div class="card-group mb-4">
-			<img class="card-img-top" width="369px" height="247px" src="/img/Tableman2.jpg" alt="Greg">
+			<img class="card-img-top" width="369px" height="247px" src="/img/Generic.jpg" alt="Greg">
 			<div class="card-body">
 				<h5 class="card-title">Greg</h5>
 				<p class="card-text">He is gay.</p>
