@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="border rounded-0 bg-light shadow container my-4">
+	<div class="col-xs-6 col-lg-8">
 	<h1>Need Help? Submit a Support Ticket</h1>
-	<div class="container" style="max-width: 600px;">
 <form class="form-horizontal" method="POST" enctype="multipart/form-data">
 		<div class="form group">
 			<label for="inputTitle">Problem Summary</label>
