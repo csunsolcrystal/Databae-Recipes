@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="border rounded-0 bg-light shadow container my-4">
+	<div class="container" style="max-width: 600px;">
 <form class="form-horizontal" method="POST" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<div class="form group">
@@ -22,5 +23,6 @@
 		</div>
 	</div>
 </form>
+</div>
 </div>
 @endsection
