@@ -33,6 +33,7 @@ Route::post('/recipes/{recipe}/favorites', 'RatingController@storeFavoriteRecipe
 Route::post('/replies/{reply}/favorites', 'RatingController@storeFavoriteReply');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/about', 'PagesController@about');
+Route::get('/support', 'PagesController@about');
 
 Auth::routes(['verify' => true]);
 

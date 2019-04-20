@@ -66,4 +66,7 @@ public function contact() {
 public function about() {
 	return view('about');
 }
+public function support() {
+	return view('support');
+}
 }
