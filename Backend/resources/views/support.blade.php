@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="border rounded-0 bg-light shadow container my-4">
+	<div class="row my-4">
 	<div class="col-xs-6 col-lg-8">
 	<h1>Need Help? Submit a Support Ticket</h1>
 <form class="form-horizontal" method="POST" enctype="multipart/form-data">
@@ -24,5 +25,6 @@
 	</div>
 </form>
 </div>
+	</div>
 </div>
 @endsection
