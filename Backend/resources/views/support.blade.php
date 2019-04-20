@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="border rounded-0 bg-light shadow container my-4">
+	<h1>Need Help? Submit a Support Ticket</h1>
 	<div class="container" style="max-width: 600px;">
 <form class="form-horizontal" method="POST" enctype="multipart/form-data">
-		{{ csrf_field() }}
 		<div class="form group">
 			<label for="inputTitle">Problem Summary</label>
 			<input type="Title" name="title" class="form-control mb-4" id="inputTitle">
