@@ -8,7 +8,7 @@
 			<h2>Email</h2>
 			<p>support@mail.databaerecipes.com</p>
 			<h2>Connect With us on Social Media</h2>
-          <ul class="social-links col-lg-12 col-md-12 col-6 list-unstyled d-flex justify-content-center">
+          <ul class="social-links col-lg-12 col-md-12 col-6 list-unstyled">
             <li><a href="#"><i class="fab fa-facebook lead px-2"></i></a></li>
             <li><a href="#"><i class="fab fa-twitter lead px-2"></i></a></li>
             <li><a href="#"><i class="fab fa-github lead px-2"></i></a></li>
