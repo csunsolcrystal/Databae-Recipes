@@ -8,12 +8,12 @@
 			<h2>Email</h2>
 			<p>support@mail.databaerecipes.com</p>
 			<h2>Connect With us on Social Media</h2>
-			<!--Facebook-->
-			<a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
-			<!--Twitter-->
-			<a class="btn-floating btn-lg btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>
-			<!--Instagram-->
-			<a class="btn-floating btn-lg btn-ins" type="button" role="button"><i class="fab fa-instagram"></i></a>
+          <ul class="social-links col-lg-12 col-md-12 col-6 list-unstyled d-flex justify-content-center">
+            <li><a href="#"><i class="fab fa-facebook lead px-2"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter lead px-2"></i></a></li>
+            <li><a href="#"><i class="fab fa-github lead px-2"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram lead px-2"></i></a></li>
+          </ul>
 		</div>
 		<div class="col-xs-6 col-lg-4">
 			<div class="border rounded-0 bg-light container my-4">
