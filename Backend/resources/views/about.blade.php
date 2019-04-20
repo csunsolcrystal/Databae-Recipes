@@ -6,7 +6,7 @@
 		<div class="col-xs-6 col-lg-8">
 			<h1>Meet the Team</h1>
 			<div class="card-body">
-				Sol Crystal
+				<h1></h1>Sol Crystal
 			</div>
 		</div>
 	</div>
