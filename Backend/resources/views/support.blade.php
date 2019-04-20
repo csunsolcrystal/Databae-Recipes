@@ -16,11 +16,13 @@
 			<select class="custom-select mr-sm-2" name="category" id="category">
 			<option selected>Choose...</option>
 			<option value="Breakfast">Account</option>
-			<option value="Lunch">Viewing Recipes</option>
+			<option value="Lunch">Submitting</option>
 			<option value="Dinner">Submitting a Recipe</option>
 			<option value="Dessert">Yeet</option>
 			</select>
 			</div>
+						<label for="exampleTextarea">Describe your problem here...</label>
+			<textarea class="form-control mb-4" name="Describe your problem here..." id="recipeFootNotes" rows="3"></textarea>
 		</div>
 	</div>
 </form>
