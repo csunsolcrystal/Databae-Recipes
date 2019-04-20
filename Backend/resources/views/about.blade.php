@@ -2,12 +2,13 @@
 
 @section('content')
 <div class="border rounded-0 bg-light shadow container my-4">
-	<div class="row my-4">
-		<div class="col-xs-6 col-lg-8">
-			<h1>Meet the Team</h1>
-			<div class="card-body">
-				<h1></h1>Sol Crystal
-			</div>
+	<div class="container mt-4">
+		<div class="card-group mb-4">
+				<img class="card-img-top" width="369px" height="247px" src="/public/img/Tableman2.jpg" alt="Ryan">
+				<div class="card-body">
+					<h5 class="card-title">Ryan Johnston</h5>
+						<p class="card-text">He is gay.</p>
+				</div>
 		</div>
 	</div>
 </div>
