@@ -7,10 +7,7 @@
 			<h1>Contact Us</h1>
 			<h2>Email</h2>
 			<p>support@mail.databaerecipes.com</p>
-			<h2>Phone</h2>
-			<p>555-555-5555</p>
-			<h2>Social Media</h2>
-			HTML
+			<h2>Connect With us on Social Media</h2>
 			<!--Facebook-->
 			<a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
 			<!--Twitter-->
