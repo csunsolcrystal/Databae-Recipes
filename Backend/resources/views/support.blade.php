@@ -21,9 +21,9 @@
 			<option value="Dessert">Yeet</option>
 			</select>
 			</div>
+						</div>
 						<label for="exampleTextarea">Describe your problem here...</label>
 			<textarea class="form-control mb-4" name="Describe your problem here..." id="recipeFootNotes" rows="3"></textarea>
-		</div>
 	</div>
 </form>
 </div>
