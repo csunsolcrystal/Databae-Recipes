@@ -26,6 +26,9 @@
 					<label for="email">Email Address</label>
 					<input type="email" name="title" class="form-control mb-4" id="email">
 				</div>
+				<button type="submit" class="btn btn-primary mt-4 mb-4">
+					Submit
+				</button>
 			</form>
 		</div>
 	</div>
