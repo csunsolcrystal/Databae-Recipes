@@ -4,7 +4,7 @@
 <div class="border rounded-0 bg-light shadow container my-4">
 	<div class="container mt-4">
 		<div class="card-group mb-4">
-			<img class="card-img-top" width="369px" height="247px" src="/img/Tableman2.jpg" alt="Ryan Johnston">
+			<img class="card-img-top" width="369px" height="247px" src="/img/Jeff.jpg" alt="Jeffrey Garcia">
 			<div class="card-body">
 				<h5 class="card-title">Jeffrey Garcia</h5>
 				<p class="card-text">Project Manager</p>
