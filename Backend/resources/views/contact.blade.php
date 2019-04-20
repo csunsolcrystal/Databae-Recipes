@@ -9,6 +9,14 @@
 			<p>support@mail.databaerecipes.com</p>
 			<h2>Phone</h2>
 			<p>555-555-5555</p>
+			<h2>Social Media</h2>
+			HTML
+			<!--Facebook-->
+			<a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
+			<!--Twitter-->
+			<a class="btn-floating btn-lg btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>
+			<!--Instagram-->
+			<a class="btn-floating btn-lg btn-ins" type="button" role="button"><i class="fab fa-instagram"></i></a>
 		</div>
 		<div class="col-xs-6 col-lg-4">
 			<div class="border rounded-0 bg-light container my-4">
