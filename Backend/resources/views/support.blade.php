@@ -21,10 +21,10 @@
 					</div>
 					<label for="subject">Subject</label>
 					<input type="subject" name="title" class="form-control mb-4" id="subject">
-					<label for="textArea">Describe your problem here...</label>
-					<textarea class="form-control mb-4" name="Describe your problem here..." id="ticketIssue" rows="3"></textarea>
+					<label for="message">Describe your problem here...</label>
+					<textarea class="form-control mb-4" name="Describe your problem here..." id="message" rows="3"></textarea>
 					<label for="email">Email Address</label>
-					<input type="email" name="title" class="form-control mb-4" id="email">
+					<input type="email" name="mail" class="form-control mb-4" id="email">
 				</div>
 				<button type="submit" class="btn btn-primary mt-4 mb-4">
 					Submit
