@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -42,6 +43,8 @@
 
 </html>
 <!--
+=======
+>>>>>>> parent of 85af20b5... a
 <div class="border rounded-0 bg-light shadow container my-4">
 	<div class="row my-4">
 		<div class="col-xs-6 col-lg-8">
@@ -65,7 +68,11 @@
 					<label for="message">Describe your problem here...</label>
 					<textarea class="form-control mb-4" name="Describe your problem here..." id="message" rows="3"></textarea>
 					<label for="email">Email Address</label>
+<<<<<<< HEAD
 					<input type="email" name="mail" class="form-control mb-4" id="email">
+=======
+					<input type="email" name="title" class="form-control mb-2" id="email">
+>>>>>>> parent of 85af20b5... a
 				</div>
 				<button type="submit" class="btn btn-primary mt-4 mb-4">
 					Submit
@@ -74,5 +81,4 @@
 		</div>
 	</div>
 </div>
--->
 @endsection
