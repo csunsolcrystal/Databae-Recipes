@@ -245,7 +245,7 @@ class RecipesController extends Controller
     {	
 	$this->validate($request, [
             'title' => 'required|max:255',
-			'category' => 'required',
+			'category' => 'required|not_in:0',
             'recipeDescription' => 'required',
 			'ingredients' => 'required',
 			'cookTime' => 'required|max:255',

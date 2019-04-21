@@ -46,7 +46,7 @@
 			<div class="form-row align-items-center mb-4">
 			<div class="col-auto my-1">
 			<select class="custom-select mr-sm-2" name="category" id="category">
-			<option selected>Choose...</option>
+			<option value="">Choose...</option>
 			<option value="Breakfast">Breakfast</option>
 			<option value="Lunch">Lunch</option>
 			<option value="Dinner">Dinner</option>

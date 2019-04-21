@@ -76,7 +76,7 @@
 
 		<!-- Copyright -->
 		<div class="footer-copyright text-center py-3">© 2019 Copyright:
-			<a href="databaerecipes.com">databaerecipes.com</a>
+			<a href="/home">databaerecipes.com</a>
 		</div>
 		<!-- Copyright -->
 	</footer>
