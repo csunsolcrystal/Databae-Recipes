@@ -3,6 +3,7 @@
 @section('content')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -48,6 +49,8 @@
 >>>>>>> parent of 85af20b5... a
 =======
 >>>>>>> parent of 85af20b5... a
+=======
+>>>>>>> parent of 85af20b5... a
 <div class="border rounded-0 bg-light shadow container my-4">
 	<div class="row my-4">
 		<div class="col-xs-6 col-lg-8">
@@ -73,7 +76,11 @@
 					<label for="email">Email Address</label>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<input type="email" name="mail" class="form-control mb-4" id="email">
+=======
+					<input type="email" name="title" class="form-control mb-2" id="email">
+>>>>>>> parent of 85af20b5... a
 =======
 					<input type="email" name="title" class="form-control mb-2" id="email">
 >>>>>>> parent of 85af20b5... a
