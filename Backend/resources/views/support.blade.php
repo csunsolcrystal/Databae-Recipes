@@ -24,7 +24,7 @@
 					<label for="textArea">Describe your problem here...</label>
 					<textarea class="form-control mb-4" name="Describe your problem here..." id="ticketIssue" rows="3"></textarea>
 					<label for="email">Email Address</label>
-					<input type="email" name="title" class="form-control mb-4" id="email">
+					<input type="email" name="title" class="form-control mb-2" id="email">
 				</div>
 				<button type="submit" class="btn btn-primary mt-4 mb-4">
 					Submit
@@ -34,3 +34,17 @@
 	</div>
 </div>
 @endsection
+
+<?php
+if($_POST["submit"]) {
+    $recipient="yourmailid@domain.com"; //Enter your mail address
+    $subject="Contact from Website"; //Subject 
+    $sender=$_POST["name"];
+    $senderEmail=$_POST["email"];
+    $message=$_POST["comments"];
+    $mailBody="Name: $sender\nEmail Address: $senderEmail\n\nMessage: $message";
+    mail($recipient, $subject, $mailBody);
+    sleep(1);
+    header("Location:http://blog.antonyraphel.in/sample/"); // Set here redirect page or destination page
+}
+?>
