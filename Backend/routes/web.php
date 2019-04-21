@@ -34,6 +34,8 @@ Route::post('/replies/{reply}/favorites', 'RatingController@storeFavoriteReply')
 Route::get('/contact', 'PagesController@contact');
 Route::get('/about', 'PagesController@about');
 Route::get('/support', 'PagesController@support');
+Route::get('/contact', 'ContactUsController@show');
+Route::post('/contact',  'ContactUsController@mailToAdmin'); 
 
 Auth::routes(['verify' => true]);
 
