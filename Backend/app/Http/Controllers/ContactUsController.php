@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -31,6 +32,8 @@ return view('contactUS');
     return back()->with('success', 'Thanks for contacting us!'); 
    }
 }
+=======
+>>>>>>> parent of 850ac621... Mail Function
 =======
 >>>>>>> parent of 850ac621... Mail Function
 =======
